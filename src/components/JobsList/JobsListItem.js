@@ -1,19 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Box } from '@welcome-ui/box'
 import { Stack } from '@welcome-ui/stack'
 import { Text } from '@welcome-ui/text'
-import { string } from 'prop-types'
+import { func, number, string } from 'prop-types'
 
 import Button from '../Common/Button'
+import { JOB_DETAILS_MODALE } from '../../constants'
 
 import * as S from './styles'
 
-function JobsListItem({ contractType, name, officeName }) {
-  const [jobDetailsOpened, setOpenJobDetailsOpen] = useState(false)
-
+function JobsListItem({ contractType, jobId, name, officeName, onClickItem }) {
   const handleJobsDetailModal = () => {
-    setOpenJobDetailsOpen(true)
-    console.log(jobDetailsOpened)
+    onClickItem({ id: jobId, type: JOB_DETAILS_MODALE })
   }
 
   return (
@@ -42,8 +40,10 @@ function JobsListItem({ contractType, name, officeName }) {
 
 JobsListItem.propTypes /* remove-proptypes */ = {
   contractType: string,
+  jobId: number,
   name: string,
   officeName: string,
+  onClickItem: func,
 }
 
 export default JobsListItem

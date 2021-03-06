@@ -2163,6 +2163,20 @@
     "@welcome-ui/utils" "^2.15.3"
     ramda "^0.27.0"
 
+"@welcome-ui/icon@^2.15.3":
+  version "2.15.3"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/icon/-/icon-2.15.3.tgz#9954066618e73d387f0f1858d978474d1a037d84"
+  integrity sha512-t02+p2887jQwl6ktoFe8Nz5XknCmh3iEUVdBkaWwdVyjIIVH0yUrvOPrOQnh4ojUgf2KjVRp+hcF6OBnprprcw==
+  dependencies:
+    "@welcome-ui/system" "^2.15.3"
+
+"@welcome-ui/icons.cross@^2.15.3":
+  version "2.15.3"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/icons.cross/-/icons.cross-2.15.3.tgz#ae6db60b5c1849ac0da59d4a3b806892712aa000"
+  integrity sha512-SorNdybpURQkS/THVUueJHGnRo/9bUtFQUjHuFE5/rjIGlNicLM6nk3cVcH0rt+PhIc6P4LBv/vQLLpU11A9Xg==
+  dependencies:
+    "@welcome-ui/icon" "^2.15.3"
+
 "@welcome-ui/shape@^2.15.3":
   version "2.15.3"
   resolved "https://registry.yarnpkg.com/@welcome-ui/shape/-/shape-2.15.3.tgz#6426019718a3febc7938e193e0b03e792180db4a"
@@ -2183,6 +2197,15 @@
   version "2.15.3"
   resolved "https://registry.yarnpkg.com/@welcome-ui/system/-/system-2.15.3.tgz#4f5709e3586c38a07901ef184738ddf0bded3768"
   integrity sha512-AqHfYnQAHSjJhk9rDaohdGXiDZNzTUmzgC36WEmyToDjdX1k3vwbopwTMn6uVXu6efev+klb6F0RZyvt0j1dXQ==
+
+"@welcome-ui/tag@^2.15.3":
+  version "2.15.3"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/tag/-/tag-2.15.3.tgz#a6e32b44f507b1580f2e7ae1843dbc3824a8200e"
+  integrity sha512-z13YWqvkE/McnJsUPUd9Fm4XWy7JAPZ/ei2SickqvIyM4Fc3UaolPXYXxzmXGFYjn7lzLk68q30oPJWGm9ykGw==
+  dependencies:
+    "@welcome-ui/icons.cross" "^2.15.3"
+    "@welcome-ui/system" "^2.15.3"
+    "@welcome-ui/utils" "^2.15.3"
 
 "@welcome-ui/text@^2.15.3":
   version "2.15.3"
@@ -9639,6 +9662,11 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
+
+reselect@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/reselect/-/reselect-4.0.0.tgz#f2529830e5d3d0e021408b246a206ef4ea4437f7"
+  integrity sha512-qUgANli03jjAyGlnbYVAV5vvnOmJnODyABz51RdBN7M4WaVu8mecZWgyQNkG8Yqe3KRGRt0l4K4B3XVEULC4CA==
 
 resolve-cwd@^2.0.0:
   version "2.0.0"

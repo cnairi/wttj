@@ -6,6 +6,7 @@ import configureStore from './store/configureStore'
 import Header from './components/Common/Header'
 import JobsList from './components/JobsList'
 import Layout from './components/Layout'
+import Modale from './components/Common/Modale/'
 
 const theme = createTheme({
   colors: {
@@ -46,6 +47,7 @@ function App() {
         <Layout>
           <JobsList />
         </Layout>
+        <Modale />
       </WuiProvider>
     </Provider>
   )

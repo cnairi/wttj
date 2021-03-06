@@ -4,7 +4,7 @@ import { Stack } from '@welcome-ui/stack'
 
 import JobsListItem from './JobsListItem'
 
-function JobsList({ fetchJobs, jobsList }) {
+function JobsList({ fetchJobs, jobsList, openModale }) {
   useEffect(() => {
     fetchJobs()
   }, [fetchJobs])
@@ -14,9 +14,11 @@ function JobsList({ fetchJobs, jobsList }) {
       {jobsList.map(jobOffer => (
         <JobsListItem
           contractType={jobOffer.contract_type.en}
+          jobId={jobOffer.id}
           key={jobOffer.id}
           name={jobOffer.name}
           officeName={jobOffer.office.name}
+          onClickItem={openModale}
         />
       ))}
     </Stack>
@@ -28,6 +30,7 @@ function JobsList({ fetchJobs, jobsList }) {
 JobsList.propTypes /* remove-proptypes */ = {
   fetchJobs: func,
   jobsList: array,
+  openModale: func,
 }
 
 export default JobsList

@@ -1,5 +1,4 @@
 import React from 'react'
-// import { Stack } from '@welcome-ui/stack'
 import { node } from 'prop-types'
 
 import * as S from './styles'
@@ -18,7 +17,7 @@ function Layout({ children }) {
   )
 }
 
-Layout.propTypes = {
+Layout.propTypes /* remove-proptypes */ = {
   children: node,
 }
 

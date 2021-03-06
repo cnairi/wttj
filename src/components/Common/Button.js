@@ -1,16 +1,29 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { bool, func, object, string } from 'prop-types'
 import { Button } from '@welcome-ui/button'
 
-function ButtonComponent({ onClickAction, text }) {
+function ButtonComponent({ external, link, onClickAction, text }) {
+  const actionProps = external
+    ? {
+        as: 'a',
+        href: link.url,
+        target: '_blank',
+        rel: 'noopener nofollow',
+      }
+    : {
+        onClick: onClickAction,
+      }
+
   return (
-    <Button onClick={onClickAction} primary="true" width={{ xs: '100%', lg: 'auto' }}>
+    <Button {...actionProps} primary="true" width={{ xs: '100%', lg: 'auto' }}>
       {text}
     </Button>
   )
 }
 
-ButtonComponent.propTypes = {
+ButtonComponent.propTypes /* remove-proptypes */ = {
+  external: bool,
+  link: object,
   onClickAction: func,
   text: string,
 }
