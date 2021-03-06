@@ -12,6 +12,7 @@ export const fetchJobs = () => {
           payload: response.data.jobs,
         })
       })
+      // eslint-disable-next-line no-console
       .catch(error => console.log('error:: ', error))
   }
 }
