@@ -8,7 +8,7 @@ function ButtonComponent({ external, link, onClickAction, text }) {
         as: 'a',
         href: link.url,
         target: '_blank',
-        rel: 'noopener nofollow',
+        rel: 'noopener nofollow noreferrer',
       }
     : {
         onClick: onClickAction,

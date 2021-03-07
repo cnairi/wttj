@@ -23,7 +23,9 @@ function JobsListItem({ contractType, jobId, name, officeName, onClickItem }) {
       width="100%"
     >
       <Box>
-        <Text variant="h3">{name}</Text>
+        <Text fontSize="1.25rem" variant="h3">
+          {name}
+        </Text>
         <Stack direction="row" spacing="xxs">
           <Text color="dark.100" variant="body1">
             {contractType}
