@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { createTheme, WuiProvider } from '@welcome-ui/core'
 
 import configureStore from './store/configureStore'
+import FiltersBar from './components/FiltersBar'
 import Header from './components/Common/Header'
 import JobsList from './components/JobsList'
 import Layout from './components/Layout'
@@ -71,6 +72,7 @@ function App() {
       <WuiProvider theme={theme} useReset>
         <Header />
         <Layout>
+          <FiltersBar />
           <JobsList />
         </Layout>
         <Modale />
