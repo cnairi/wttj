@@ -5,18 +5,21 @@ import { Form } from 'react-final-form'
 import { array, func, string } from 'prop-types'
 import { InputText } from '@welcome-ui/input-text'
 import { Select } from '@welcome-ui/select'
+import { DatePicker } from '@welcome-ui/date-picker'
+import { DateIcon } from '@welcome-ui/icons.date'
 
 import {
   clearContractTypeFilter,
+  clearDateFilter,
   clearKeywordFilter,
   saveSearchFilters,
 } from '../../store/actions/filters'
-import { selectJobsByKeywords } from '../../store/selectors/filters'
 import { selectJobsTypes } from '../../store/selectors/jobs'
 import { openModale } from '../../store/actions/modale'
 
 function FiltersBar({
   clearContractTypeFilter,
+  clearDateFilter,
   clearKeywordFilter,
   contractTypeSelected,
   filtersKeyword,
@@ -31,11 +34,19 @@ function FiltersBar({
     }
   }
 
-  const handleSelectJobType = option => {
-    if (option) {
-      saveSearchFilters({ contractType: option })
+  const handleSelectJobType = contractType => {
+    if (contractType) {
+      saveSearchFilters({ contractType })
     } else {
       clearContractTypeFilter()
+    }
+  }
+
+  const handleDateChange = date => {
+    if (date) {
+      saveSearchFilters({ date })
+    } else {
+      clearDateFilter()
     }
   }
 
@@ -45,6 +56,7 @@ function FiltersBar({
 
   return (
     <Form
+      initialValues={{ date: Date.now() }}
       onSubmit={onSubmit}
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
@@ -71,6 +83,15 @@ function FiltersBar({
             value={contractTypeSelected}
             width="100%"
           />
+          <ConnectedField
+            component={DatePicker}
+            icon={<DateIcon color="light.100" />}
+            label="Published after"
+            maxDate={new Date()}
+            name="date"
+            onChange={handleDateChange}
+            yearDropdownItemNumber={5}
+          />
           <button type="submit">Submit</button>
         </form>
       )}
@@ -81,6 +102,7 @@ function FiltersBar({
 
 FiltersBar.propTypes = {
   clearContractTypeFilter: func,
+  clearDateFilter: func,
   clearKeywordFilter: func,
   contractTypeSelected: string,
   filtersKeyword: string,
@@ -91,7 +113,6 @@ FiltersBar.propTypes = {
 const mapStateToProps = state => {
   return {
     contractTypeSelected: state.filters.contractType,
-    jobsListFiltered: selectJobsByKeywords(state),
     jobsTypes: selectJobsTypes(state),
     filtersKeyword: state.filters.keyword,
   }
@@ -99,9 +120,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   clearContractTypeFilter: () => dispatch(clearContractTypeFilter()),
+  clearDateFilter: () => dispatch(clearDateFilter()),
   clearKeywordFilter: () => dispatch(clearKeywordFilter()),
-  saveSearchFilters: ({ contractType, keyword }) =>
-    dispatch(saveSearchFilters({ contractType, keyword })),
+  saveSearchFilters: ({ contractType, date, keyword }) =>
+    dispatch(saveSearchFilters({ contractType, date, keyword })),
   openModale: (id, type) => dispatch(openModale(id, type)),
 })
 

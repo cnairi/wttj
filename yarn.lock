@@ -1243,6 +1243,14 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@hypnosphi/create-react-context@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@hypnosphi/create-react-context/-/create-react-context-0.3.1.tgz#f8bfebdc7665f5d426cba3753e0e9c7d3154d7c6"
+  integrity sha512-V1klUed202XahrWJLLOT3EXNeCpFHCcJntdFGI15ntCwau+jfT386w7OFTMaCqOgXUH1fa0w/I1oZs+i/Rfr0A==
+  dependencies:
+    gud "^1.0.0"
+    warning "^4.0.3"
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -2189,6 +2197,33 @@
     "@welcome-ui/utils" "^2.15.3"
     ramda "^0.27.0"
 
+"@welcome-ui/date-picker@^2.15.3":
+  version "2.15.3"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/date-picker/-/date-picker-2.15.3.tgz#b012ef5bfbc45f28323bc018e827c92f9d13abc2"
+  integrity sha512-AYrF8P01ECXlZiId/0tVg45SBHbvmM1d9waLgRYg8Ljo5uWPI+AyiGYL+u8lCCg/UwvuXgP4LqOPI27xQRaO5Q==
+  dependencies:
+    "@welcome-ui/date-time-picker-common" "^2.15.3"
+    "@welcome-ui/icons.date" "^2.15.3"
+    "@welcome-ui/system" "^2.15.3"
+    "@welcome-ui/utils" "^2.15.3"
+    react-datepicker "^2.9.6"
+
+"@welcome-ui/date-time-picker-common@^2.15.3":
+  version "2.15.3"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/date-time-picker-common/-/date-time-picker-common-2.15.3.tgz#3bc09fe6e3dcc0c8261c9513164875802df3840d"
+  integrity sha512-m5OTzafA/Y+NpJT/UWwPHPY2h1KTVyeqn1qGge8BXIAcZDNkAHQDHknP1k547bzeBIHMjSTuh3uGfuXNaay8dg==
+  dependencies:
+    "@welcome-ui/button" "^2.15.3"
+    "@welcome-ui/clear-button" "^2.15.3"
+    "@welcome-ui/field" "^2.15.3"
+    "@welcome-ui/icons.left" "^2.15.3"
+    "@welcome-ui/icons.right" "^2.15.3"
+    "@welcome-ui/select" "^2.15.3"
+    "@welcome-ui/system" "^2.15.3"
+    "@welcome-ui/utils" "^2.15.3"
+    lodash.range "^3.2.0"
+    react-datepicker "^2.9.6"
+
 "@welcome-ui/field-group@^2.15.3":
   version "2.15.3"
   resolved "https://registry.yarnpkg.com/@welcome-ui/field-group/-/field-group-2.15.3.tgz#35adb98ecf036844eb14cd5af7ba6b4ba42aa386"
@@ -2252,6 +2287,13 @@
   dependencies:
     "@welcome-ui/icon" "^2.15.3"
 
+"@welcome-ui/icons.date@^2.15.3":
+  version "2.15.3"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/icons.date/-/icons.date-2.15.3.tgz#b1d5a1ac9e88a5a35d6a4bfebdb1d6f0eabeed91"
+  integrity sha512-+50pxCvlnwKxdy1UWnffKfrhYQdtWUsqe05vozBZ6YAqKRKKTUG+0udmTDyvyY9BXz8rEghRD833DuGfXWImUw==
+  dependencies:
+    "@welcome-ui/icon" "^2.15.3"
+
 "@welcome-ui/icons.down@^2.15.3":
   version "2.15.3"
   resolved "https://registry.yarnpkg.com/@welcome-ui/icons.down/-/icons.down-2.15.3.tgz#d0778d320ff1dd6a1128713f5dc2fa892487fdaf"
@@ -2266,6 +2308,13 @@
   dependencies:
     "@welcome-ui/icon" "^2.15.3"
 
+"@welcome-ui/icons.left@^2.15.3":
+  version "2.15.3"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/icons.left/-/icons.left-2.15.3.tgz#1c3c450bc37e2f00275f92864821108c0877831d"
+  integrity sha512-TYurNfZfBXIV7mtQrwpJKFd609TzZmE2/UhK5POUSNEmbFpanOLge0qrfK66cO/9kIUYwc5vl/cNTSTCQDyHXA==
+  dependencies:
+    "@welcome-ui/icon" "^2.15.3"
+
 "@welcome-ui/icons.location@^2.15.3":
   version "2.15.3"
   resolved "https://registry.yarnpkg.com/@welcome-ui/icons.location/-/icons.location-2.15.3.tgz#2dbe374cd639ce507a678d6f24fa05eb08261bc0"
@@ -2277,6 +2326,13 @@
   version "2.15.3"
   resolved "https://registry.yarnpkg.com/@welcome-ui/icons.lock/-/icons.lock-2.15.3.tgz#a8dd9e2123a9a2028fab80b20a8307bb532088b0"
   integrity sha512-eQQZfFTNp2Vjbj6DFB6EtJ1fd6/jr0+SzkblAcBzF8UwJ9zOZ6UpAcIoF1E0cCp9j6MDMht9IcgA/4ijzAqwAg==
+  dependencies:
+    "@welcome-ui/icon" "^2.15.3"
+
+"@welcome-ui/icons.right@^2.15.3":
+  version "2.15.3"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/icons.right/-/icons.right-2.15.3.tgz#b274e48ddaa9cddb2233ae0e06594172626883c6"
+  integrity sha512-UfYW0KtuHuixacNUI97QAZ2D/MRn6JrRx9jncNsa3EwqyC9dTDoFZof2ZIGELPZP0J4/WEozyAV9R9gmgmKQkg==
   dependencies:
     "@welcome-ui/icon" "^2.15.3"
 
@@ -3601,6 +3657,11 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+  integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
+
 clean-css@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.3.tgz#507b5de7d97b48ee53d84adb0160ff6216380f78"
@@ -4259,6 +4320,11 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
+date-fns@^2.0.1:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.19.0.tgz#65193348635a28d5d916c43ec7ce6fbd145059e1"
+  integrity sha512-X3bf2iTPgCAQp9wvjOQytnf5vO5rESYRXlPIVcgSbtT5OTScPcsf9eZU+B/YIkKAtYr5WeCii58BgATrNitlWg==
+
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -4300,7 +4366,7 @@ dedent@^0.7.0:
   resolved "https://registry.yarnpkg.com/dedent/-/dedent-0.7.0.tgz#2495ddbaf6eb874abb0e1be9df22d2e5a544326c"
   integrity sha1-JJXduvbrh0q7Dhvp3yLS5aVEMmw=
 
-deep-equal@^1.0.1:
+deep-equal@^1.0.1, deep-equal@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.1.1.tgz#b5c98c942ceffaf7cb051e24e1434a25a2e6076a"
   integrity sha512-yd9c5AdiqVcR+JjcwUQb9DkhJc8ngNr0MahEBGvDiJw8puWab2yZlh+nkasOnZP+EGTAP6rRp2JzJhJZzvNF8g==
@@ -5714,6 +5780,11 @@ growly@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
   integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
+
+gud@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gud/-/gud-1.0.0.tgz#a489581b17e6a70beca9abe3ae57de7a499852c0"
+  integrity sha512-zGEOVKFM5sVPPrYs7J5/hYEw2Pof8KCyOwyhG8sAF26mCAeUFAcYPu1mwB7hhpIP29zOIBaDqwuHdLp0jvZXjw==
 
 gzip-size@5.1.1:
   version "5.1.1"
@@ -7350,6 +7421,11 @@ lodash.memoize@^4.1.2:
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
 
+lodash.range@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.range/-/lodash.range-3.2.0.tgz#f461e588f66683f7eadeade513e38a69a565a15d"
+  integrity sha1-9GHliPZmg/fq3q3lE+OKaaVloV0=
+
 lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
@@ -7385,7 +7461,7 @@ loglevel@^1.6.8:
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.7.1.tgz#005fde2f5e6e47068f935ff28573e125ef72f197"
   integrity sha512-Hesni4s5UkWkwCGJMQGAh71PaLUmKFM60dHvq0zi/vDhhrzuk+4GgNbTXJ12YYQJn6ZKBDNIjYcuQGKudvqrIw==
 
-loose-envify@^1.1.0, loose-envify@^1.4.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -8466,6 +8542,11 @@ polished@^3.4.1:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
+popper.js@^1.14.4:
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
+  integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
+
 portfinder@^1.0.26:
   version "1.0.28"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.28.tgz#67c4622852bd5374dd1dd900f779f53462fac778"
@@ -9236,7 +9317,7 @@ prompts@2.4.0, prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.6.0, prop-types@^15.7.2:
+prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -9417,6 +9498,17 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
+react-datepicker@^2.9.6:
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/react-datepicker/-/react-datepicker-2.16.0.tgz#6bd68de94f5fb38c8f6a4370f3c612837c700e4e"
+  integrity sha512-TvcmSY27rn0JKvuJuIXNNS+niGQNdgtuG/CsBttVYhPOA9KmSw7c2PvQBPVEvzkyV+QPNJ8jN/KVJNj9uvopqA==
+  dependencies:
+    classnames "^2.2.6"
+    date-fns "^2.0.1"
+    prop-types "^15.7.2"
+    react-onclickoutside "^6.9.0"
+    react-popper "^1.3.4"
+
 react-dev-utils@^11.0.3:
   version "11.0.3"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-11.0.3.tgz#b61ed499c7d74f447d4faddcc547e5e671e97c08"
@@ -9484,6 +9576,24 @@ react-is@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
+
+react-onclickoutside@^6.9.0:
+  version "6.10.0"
+  resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.10.0.tgz#05abb592575b08b4d129003494056b9dff46eeeb"
+  integrity sha512-7i2L3ef+0ILXpL6P+Hg304eCQswh4jl3ynwR71BSlMU49PE2uk31k8B2GkP6yE9s2D4jTGKnzuSpzWxu4YxfQQ==
+
+react-popper@^1.3.4:
+  version "1.3.11"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-1.3.11.tgz#a2cc3f0a67b75b66cfa62d2c409f9dd1fcc71ffd"
+  integrity sha512-VSA/bS+pSndSF2fiasHK/PTEEAyOpX60+H5EPAjoArr8JGm+oihu4UbrqcEBpQibJxBVCpYyjAX7abJ+7DoYVg==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    "@hypnosphi/create-react-context" "^0.3.1"
+    deep-equal "^1.1.1"
+    popper.js "^1.14.4"
+    prop-types "^15.6.1"
+    typed-styles "^0.0.7"
+    warning "^4.0.2"
 
 react-redux@^7.2.2:
   version "7.2.2"
@@ -11231,6 +11341,11 @@ type@^2.0.0:
   resolved "https://registry.yarnpkg.com/type/-/type-2.3.0.tgz#ada7c045f07ead08abf9e2edd29be1a0c0661132"
   integrity sha512-rgPIqOdfK/4J9FhiVrZ3cveAjRRo5rsQBAIhnylX874y1DX/kEKSVdLsnuHB6l1KTjHyU01VjiMBHgU2adejyg==
 
+typed-styles@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/typed-styles/-/typed-styles-0.0.7.tgz#93392a008794c4595119ff62dde6809dbc40a3d9"
+  integrity sha512-pzP0PWoZUhsECYjABgCGQlRGL1n7tOHsgwYv3oIiEpJwGhFTuty/YNeduxQYzXXa3Ge5BdT6sHYIQYpl4uJ+5Q==
+
 typedarray-to-buffer@^3.1.5:
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/typedarray-to-buffer/-/typedarray-to-buffer-3.1.5.tgz#a97ee7a9ff42691b9f783ff1bc5112fe3fca9080"
@@ -11515,6 +11630,13 @@ walker@^1.0.7, walker@~1.0.5:
   integrity sha1-L3+bj9ENZ3JisYqITijRlhjgKPs=
   dependencies:
     makeerror "1.0.x"
+
+warning@^4.0.2, warning@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
+  integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
+  dependencies:
+    loose-envify "^1.0.0"
 
 watchpack-chokidar2@^2.0.1:
   version "2.0.1"
