@@ -31,13 +31,6 @@ function ModaleContent({
 
   return (
     <S.JobContent p="4xl">
-      {/* {myLink.split('<a').reduce((prev, current, i) => {
-        if (!i) {
-          return [current]
-        }
-        return prev.concat(<b key={'<a' + current}>{'<a'}</b>, current)
-      }, [])} */}
-      {/* <Text dangerouslySetInnerHTML={{ __html: myLink }} /> */}
       <Text>{createdAt}</Text>
       <Tag variant="primary">{departmentName}</Tag>
       <SectionTitle text="Job Description" />

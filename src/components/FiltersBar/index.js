@@ -2,32 +2,41 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { ConnectedField } from '@welcome-ui/connected-field'
 import { Form } from 'react-final-form'
-import { Search } from '@welcome-ui/search'
-import { Shape } from '@welcome-ui/shape'
-import { array, func } from 'prop-types'
+import { array, func, string } from 'prop-types'
+import { InputText } from '@welcome-ui/input-text'
+import { Select } from '@welcome-ui/select'
 
-import { saveSearchFilters } from '../../store/actions/filters'
+import {
+  clearContractTypeFilter,
+  clearKeywordFilter,
+  saveSearchFilters,
+} from '../../store/actions/filters'
 import { selectJobsByKeywords } from '../../store/selectors/filters'
-import wttjLogo from '../../assets/images/logo-wttj.jpeg'
+import { selectJobsTypes } from '../../store/selectors/jobs'
+import { openModale } from '../../store/actions/modale'
 
-function FiltersBar({ filters, saveSearchFilters }) {
-  const handleSearch = async s => {
-    await saveSearchFilters({ keyword: s })
-
-    return filters
+function FiltersBar({
+  clearContractTypeFilter,
+  clearKeywordFilter,
+  contractTypeSelected,
+  filtersKeyword,
+  jobsTypes,
+  saveSearchFilters,
+}) {
+  const handleSearch = s => {
+    if (s.target.value) {
+      saveSearchFilters({ keyword: s.target.value })
+    } else {
+      clearKeywordFilter()
+    }
   }
 
-  const renderItem = item => {
-    return (
-      item && (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Shape h="40px" mr="sm" shape="circle" w="40px">
-            <img alt="Company Logo" src={wttjLogo} />
-          </Shape>
-          {item.name} ({item.contract_type.en})
-        </div>
-      )
-    )
+  const handleSelectJobType = option => {
+    if (option) {
+      saveSearchFilters({ contractType: option })
+    } else {
+      clearContractTypeFilter()
+    }
   }
 
   const onSubmit = () => {}
@@ -40,13 +49,27 @@ function FiltersBar({ filters, saveSearchFilters }) {
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
           <ConnectedField
-            component={Search}
-            itemToString={item => item && item.Title}
-            label="Jobs"
-            name="jobs"
+            component={InputText}
+            isClearable
+            name="searchByKeyword"
+            onChange={handleSearch}
             placeholder="Your dream job?"
-            renderItem={item => renderItem(item)}
-            search={handleSearch}
+            required
+            value={filtersKeyword}
+          />
+          <ConnectedField
+            component={Select}
+            height={40}
+            isClearable
+            label="Contract Type"
+            name="contractType"
+            onChange={handleSelectJobType}
+            options={jobsTypes.map(jobTypes => ({
+              value: jobTypes.toLowerCase(),
+              label: jobTypes,
+            }))}
+            value={contractTypeSelected}
+            width="100%"
           />
           <button type="submit">Submit</button>
         </form>
@@ -57,18 +80,29 @@ function FiltersBar({ filters, saveSearchFilters }) {
 }
 
 FiltersBar.propTypes = {
-  filters: array,
+  clearContractTypeFilter: func,
+  clearKeywordFilter: func,
+  contractTypeSelected: string,
+  filtersKeyword: string,
+  jobsTypes: array,
   saveSearchFilters: func,
 }
 
 const mapStateToProps = state => {
   return {
-    filters: selectJobsByKeywords(state),
+    contractTypeSelected: state.filters.contractType,
+    jobsListFiltered: selectJobsByKeywords(state),
+    jobsTypes: selectJobsTypes(state),
+    filtersKeyword: state.filters.keyword,
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  saveSearchFilters: ({ keyword }) => dispatch(saveSearchFilters({ keyword })),
+  clearContractTypeFilter: () => dispatch(clearContractTypeFilter()),
+  clearKeywordFilter: () => dispatch(clearKeywordFilter()),
+  saveSearchFilters: ({ contractType, keyword }) =>
+    dispatch(saveSearchFilters({ contractType, keyword })),
+  openModale: (id, type) => dispatch(openModale(id, type)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(FiltersBar)

@@ -4,12 +4,13 @@ import { Stack } from '@welcome-ui/stack'
 import { Text } from '@welcome-ui/text'
 import { func, number, string } from 'prop-types'
 
+import highlightContent from '../../utils/highlightContent'
 import Button from '../Common/Button'
 import { JOB_DETAILS_MODALE } from '../../constants'
 
 import * as S from './styles'
 
-function JobsListItem({ contractType, jobId, name, officeName, onClickItem }) {
+function JobsListItem({ contractType, filtersKeyword, jobId, name, officeName, onClickItem }) {
   const handleJobsDetailModal = () => {
     onClickItem({ id: jobId, type: JOB_DETAILS_MODALE })
   }
@@ -24,7 +25,7 @@ function JobsListItem({ contractType, jobId, name, officeName, onClickItem }) {
     >
       <Box>
         <Text fontSize="1.25rem" variant="h3">
-          {name}
+          {highlightContent(name, filtersKeyword)}
         </Text>
         <Stack direction="row" spacing="xxs">
           <Text color="dark.100" variant="body1">
@@ -42,6 +43,7 @@ function JobsListItem({ contractType, jobId, name, officeName, onClickItem }) {
 
 JobsListItem.propTypes /* remove-proptypes */ = {
   contractType: string,
+  filtersKeyword: string,
   jobId: number,
   name: string,
   officeName: string,

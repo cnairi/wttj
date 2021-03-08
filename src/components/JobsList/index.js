@@ -2,12 +2,18 @@ import { connect } from 'react-redux'
 
 import { fetchJobs } from '../../store/actions/jobs'
 import { openModale } from '../../store/actions/modale'
+import { selectFiltersActivated, selectJobsByContract } from '../../store/selectors/filters'
 
 import JobsList from './JobsList'
 
 const mapStateToProps = state => {
-  const { jobs } = state
-  return { jobsList: jobs.jobsList }
+  const { filters, jobs } = state
+  return {
+    filtersActivated: selectFiltersActivated(state),
+    jobsList: jobs.jobsList,
+    jobsListFiltered: selectJobsByContract(state),
+    filtersKeyword: filters.keyword,
+  }
 }
 
 const mapDispatchToProps = dispatch => ({

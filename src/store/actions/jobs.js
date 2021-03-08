@@ -9,7 +9,10 @@ export const fetchJobs = () => {
       .then(response => {
         dispatch({
           type: FETCH_JOBS,
-          payload: response.data.jobs,
+          payload: {
+            jobsList: response.data.jobs,
+            jobsTypes: Array.from(new Set(response.data.jobs.map(job => job.contract_type.en))),
+          },
         })
       })
       // eslint-disable-next-line no-console
