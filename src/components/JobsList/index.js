@@ -6,6 +6,7 @@ import {
   selectFiltersActivated,
   selectGroupedByActivated,
   selectJobsFiltered,
+  selectJobsListOrdered,
 } from '../../store/selectors/filters'
 
 import JobsList from './JobsList'
@@ -14,9 +15,12 @@ const mapStateToProps = state => {
   const { filters, jobs } = state
   return {
     filtersActivated: selectFiltersActivated(state),
-    groupBy: selectGroupedByActivated(state),
+    groupedBy: selectGroupedByActivated(state),
+    jobsDepartments: jobs.jobsDepartments,
     jobsList: jobs.jobsList,
+    jobsOffices: jobs.jobsOffices,
     jobsListFiltered: selectJobsFiltered(state),
+    jobsListOrdered: selectJobsListOrdered(state),
     filtersKeyword: filters.keyword,
   }
 }

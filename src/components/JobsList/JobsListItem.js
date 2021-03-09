@@ -6,7 +6,7 @@ import { func, number, string } from 'prop-types'
 
 import highlightContent from '../../utils/highlightContent'
 import Button from '../Common/Button'
-import { JOB_DETAILS_MODALE } from '../../constants'
+import { CTA, JOB_DETAILS_MODALE } from '../../constants'
 
 import * as S from './styles'
 
@@ -36,7 +36,7 @@ function JobsListItem({ contractType, filtersKeyword, jobId, name, officeName, o
           </Text>
         </Stack>
       </Box>
-      <Button onClickAction={handleJobsDetailModal} text="See more" />
+      <Button onClickAction={handleJobsDetailModal} text={CTA} />
     </S.ItemContainer>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { string } from 'prop-types'
 import { Box } from '@welcome-ui/box'
 
-import * as S from '../styles'
+import * as S from './styles'
 
 function Title({ text }) {
   return (

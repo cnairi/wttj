@@ -1,16 +1,21 @@
 import React, { useEffect } from 'react'
 import { array, bool, func, string } from 'prop-types'
 import { Stack } from '@welcome-ui/stack'
-import { Alert } from '@welcome-ui/alert'
 
 import JobsListItem from './JobsListItem'
+import JobsListOrdered from './JobsListOrdered'
+import EmptyList from './EmptyList'
 
 function JobsList({
   fetchJobs,
   filtersActivated,
   filtersKeyword,
+  groupedBy,
+  jobsDepartments,
   jobsList,
   jobsListFiltered,
+  jobsListOrdered,
+  jobsOffices,
   openModale,
 }) {
   const jobsListToDisplay = jobsListFiltered.length ? jobsListFiltered : jobsList
@@ -20,14 +25,19 @@ function JobsList({
   }, [fetchJobs])
 
   if (filtersActivated && !jobsListFiltered.length) {
+    return <EmptyList />
+  }
+
+  if (jobsListOrdered.length) {
     return (
-      <Alert variant="info">
-        <Alert.Title>Try again with other requirements or come back later!</Alert.Title>
-        <span>
-          No results found for these criteria. Your dream job is on his way to Welcome to the Jungle
-          platform.
-        </span>
-      </Alert>
+      <JobsListOrdered
+        filtersKeyword={filtersKeyword}
+        groupedBy={groupedBy}
+        jobsDepartments={jobsDepartments}
+        jobsListOrdered={jobsListOrdered}
+        jobsOffices={jobsOffices}
+        openModale={openModale}
+      />
     )
   }
 
@@ -54,8 +64,12 @@ JobsList.propTypes /* remove-proptypes */ = {
   fetchJobs: func,
   filtersActivated: bool,
   filtersKeyword: string,
+  groupedBy: string,
+  jobsDepartments: array,
   jobsList: array,
   jobsListFiltered: array,
+  jobsListOrdered: array,
+  jobsOffices: array,
   openModale: func,
 }
 

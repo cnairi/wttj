@@ -1,6 +1,5 @@
 import styled from '@xstyled/styled-components'
 import { Box } from '@welcome-ui/box'
-import { Text } from '@welcome-ui/text'
 
 export const Container = styled.div`
   display: flex;
@@ -27,24 +26,6 @@ export const Dialog = styled(Box)`
   &[data-enter] {
     margin-top: 0;
     opacity: 1;
-  }
-`
-
-export const SectionTitle = styled(Text)`
-  display: flex;
-  align-items: center;
-  padding-left: 35px;
-  padding-bottom: 0.625rem;
-  border-bottom: 1px solid rgb(229, 229, 229);
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0px;
-    height: 4px;
-    width: 20px;
-    background-color: rgb(255, 205, 0);
-    top: 0.875rem;
   }
 `
 

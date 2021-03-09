@@ -2,6 +2,8 @@ import { createSelector } from 'reselect'
 
 import parseDate from '../../utils/parseDate'
 
+import { selectJobsDepartments, selectJobsOffices } from './jobs'
+
 const getAllJobs = state => state.jobs.jobsList
 const getFiltersContract = state => state.filters.contractType
 const getFiltersDate = state => state.filters.date
@@ -28,4 +30,20 @@ export const selectJobsFiltered = createSelector(
         (job.contract_type.en.toLowerCase() === contractType || !contractType) &&
         (!date || new Date(parseDate(job.created_at.en)) - new Date(date) > 0)
     )
+)
+
+export const selectJobsListOrdered = createSelector(
+  getAllJobs,
+  selectJobsFiltered,
+  selectGroupedByActivated,
+  selectJobsDepartments,
+  selectJobsOffices,
+  (allJobs, filteredJobs, groupedBy, departments, offices) => {
+    if (!groupedBy) return []
+    const groupCategories = groupedBy === 'department' ? departments : offices
+    const jobs = filteredJobs.length ? filteredJobs : allJobs
+    return groupCategories.map(groupCategory =>
+      jobs.filter(job => job[groupedBy]['name'] === groupCategory)
+    )
+  }
 )

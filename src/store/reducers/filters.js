@@ -8,7 +8,7 @@ const initialState = {
   contractType: '',
   date: '',
   keyword: '',
-  groupedBy: 'department_name',
+  groupedBy: 'department',
 }
 
 const filtersReducer = (state = initialState, action) => {

@@ -6,6 +6,8 @@ import { CoverLetterIcon } from '@welcome-ui/icons.cover_letter'
 import { CrossIcon } from '@welcome-ui/icons.cross'
 import { LocationIcon } from '@welcome-ui/icons.location'
 
+import { COMPANY_NAME, JOB_ILLUSTRATION_ALT, LOGO_ALT } from '../../../constants'
+
 import * as S from './styles'
 
 function Header({ city, closeModaleWithAnim, contractType, country, image, logo, name }) {
@@ -28,10 +30,10 @@ function Header({ city, closeModaleWithAnim, contractType, country, image, logo,
         p="xl"
       >
         <S.LogoContainer height={50} width={50}>
-          <img alt="Company Logo" src={logo} />
+          <img alt={LOGO_ALT} src={logo} />
         </S.LogoContainer>
         <Text color="light.900" margin="0.9375rem 0" variant="h3">
-          WELCOME TO THE JUNGLE
+          {COMPANY_NAME}
         </Text>
         <Text color="light.900" marginBottom="md" textAlign="center" variant="h1">
           {name}
@@ -47,7 +49,7 @@ function Header({ city, closeModaleWithAnim, contractType, country, image, logo,
           </Text>
         </Stack>
       </S.JobCard>
-      <img alt="Welcome to the Jungle position" src={image} />
+      <img alt={JOB_ILLUSTRATION_ALT} src={image} />
     </S.ImageContainer>
   )
 }

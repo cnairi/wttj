@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { ConnectedField } from '@welcome-ui/connected-field'
 import { Form } from 'react-final-form'
-import { array, func, string } from 'prop-types'
+import { array, func, instanceOf, oneOfType, string } from 'prop-types'
 import { InputText } from '@welcome-ui/input-text'
 import { Select } from '@welcome-ui/select'
 import { DatePicker } from '@welcome-ui/date-picker'
@@ -17,6 +17,14 @@ import {
 } from '../../store/actions/filters'
 import { selectJobsTypes } from '../../store/selectors/jobs'
 import { openModale } from '../../store/actions/modale'
+import {
+  DATE_PICKER_PLACEHOLDER,
+  SEARCH_PLACEHOLDER,
+  SELECT_CONTRACT_PLACEHOLDER,
+  SELECT_GROUP_OPTIONS,
+  SELECT_GROUP_PLACEHOLDER,
+  SUBMIT,
+} from '../../constants'
 
 function FiltersBar({
   clearContractTypeFilter,
@@ -24,42 +32,22 @@ function FiltersBar({
   clearGroupedBy,
   clearKeywordFilter,
   contractTypeSelected,
+  dateFilter,
   filtersKeyword,
   groupedByFilter,
   jobsTypes,
   saveSearchFilters,
 }) {
-  const handleSearch = s => {
-    if (s.target.value) {
-      saveSearchFilters({ keyword: s.target.value })
-    } else {
-      clearKeywordFilter()
-    }
-  }
+  const handleSearch = e =>
+    e.target.value ? saveSearchFilters({ keyword: e.target.value }) : clearKeywordFilter()
 
-  const handleSelectJobType = contractType => {
-    if (contractType) {
-      saveSearchFilters({ contractType })
-    } else {
-      clearContractTypeFilter()
-    }
-  }
+  const handleSelectJobType = contractType =>
+    contractType ? saveSearchFilters({ contractType }) : clearContractTypeFilter()
 
-  const handleGroupBy = groupedBy => {
-    if (groupedBy) {
-      saveSearchFilters({ groupedBy })
-    } else {
-      clearGroupedBy()
-    }
-  }
+  const handleGroupBy = groupedBy =>
+    groupedBy ? saveSearchFilters({ groupedBy }) : clearGroupedBy()
 
-  const handleDateChange = date => {
-    if (date) {
-      saveSearchFilters({ date })
-    } else {
-      clearDateFilter()
-    }
-  }
+  const handleDateChange = date => (date ? saveSearchFilters({ date }) : clearDateFilter())
 
   const onSubmit = () => {}
 
@@ -74,17 +62,15 @@ function FiltersBar({
           <ConnectedField
             component={InputText}
             isClearable
-            name="searchByKeyword"
+            name="keyword"
             onChange={handleSearch}
-            placeholder="Your dream job?"
-            required
+            placeholder={SEARCH_PLACEHOLDER}
             value={filtersKeyword}
           />
           <ConnectedField
             component={Select}
-            height={40}
             isClearable
-            label="Contract Type"
+            label={SELECT_CONTRACT_PLACEHOLDER}
             name="contractType"
             onChange={handleSelectJobType}
             options={jobsTypes.map(jobTypes => ({
@@ -92,34 +78,26 @@ function FiltersBar({
               label: jobTypes,
             }))}
             value={contractTypeSelected}
-            width="100%"
           />
           <ConnectedField
             component={DatePicker}
             icon={<DateIcon color="light.100" />}
-            label="Published after"
+            label={DATE_PICKER_PLACEHOLDER}
             maxDate={new Date()}
             name="date"
             onChange={handleDateChange}
-            yearDropdownItemNumber={5}
+            {...(dateFilter && { value: dateFilter })}
           />
           <ConnectedField
             component={Select}
-            height={40}
-            id="department"
             isClearable
-            label="Grouped by"
-            name="groups"
+            label={SELECT_GROUP_PLACEHOLDER}
+            name="group"
             onChange={handleGroupBy}
-            options={[
-              { value: 'department_name', label: 'Department name' },
-              { value: 'office_name', label: 'Office name' },
-              { value: '', label: 'None' },
-            ]}
+            options={SELECT_GROUP_OPTIONS}
             value={groupedByFilter}
-            width="100%"
           />
-          <button type="submit">Submit</button>
+          <button type="submit">{SUBMIT}</button>
         </form>
       )}
       validate={validate}
@@ -133,6 +111,7 @@ FiltersBar.propTypes = {
   clearGroupedBy: func,
   clearKeywordFilter: func,
   contractTypeSelected: string,
+  dateFilter: oneOfType([string, instanceOf(Date)]),
   filtersKeyword: string,
   groupedByFilter: string,
   jobsTypes: array,
@@ -143,6 +122,7 @@ const mapStateToProps = state => {
   return {
     contractTypeSelected: state.filters.contractType,
     jobsTypes: selectJobsTypes(state),
+    dateFilter: state.filters.date,
     filtersKeyword: state.filters.keyword,
     groupedByFilter: state.filters.groupedBy,
   }

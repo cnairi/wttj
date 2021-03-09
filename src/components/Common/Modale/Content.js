@@ -6,8 +6,8 @@ import { Text } from '@welcome-ui/text'
 import ReactHtmlParser from 'react-html-parser'
 
 import Button from '../Button'
+import SectionTitle from '../Title'
 
-import SectionTitle from './Section/Title'
 import * as S from './styles'
 
 function ModaleContent({
