@@ -9,4 +9,6 @@ export const selectJobDetails = createSelector(
   (selectedJobId, allJobs) => allJobs.filter(job => job.id === selectedJobId)[0]
 )
 
+export const selectJobsDepartments = state => state.jobs.jobsDepartments
+export const selectJobsOffices = state => state.jobs.jobsOffices
 export const selectJobsTypes = state => state.jobs.jobsTypes

@@ -12,6 +12,10 @@ export const fetchJobs = () => {
           payload: {
             jobsList: response.data.jobs,
             jobsTypes: Array.from(new Set(response.data.jobs.map(job => job.contract_type.en))),
+            jobsOffices: Array.from(new Set(response.data.jobs.map(job => job.office.name))),
+            jobsDepartments: Array.from(
+              new Set(response.data.jobs.map(job => job.department.name))
+            ),
           },
         })
       })

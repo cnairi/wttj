@@ -71,7 +71,7 @@ function App() {
     <Provider store={configureStore}>
       <WuiProvider theme={theme} useReset>
         <Header />
-        <Layout>
+        <Layout title="Our offers">
           <FiltersBar />
           <JobsList />
         </Layout>

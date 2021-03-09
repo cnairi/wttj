@@ -6,6 +6,7 @@ const getAllJobs = state => state.jobs.jobsList
 const getFiltersContract = state => state.filters.contractType
 const getFiltersDate = state => state.filters.date
 const getFiltersKeyword = state => state.filters.keyword
+const getGroupedByActivated = state => state.filters.groupedBy
 
 export const selectFiltersActivated = createSelector(
   getFiltersKeyword,
@@ -13,7 +14,9 @@ export const selectFiltersActivated = createSelector(
   (keywords, contractType) => (keywords || contractType ? true : false)
 )
 
-export const selectJobsByContract = createSelector(
+export const selectGroupedByActivated = createSelector(getGroupedByActivated, group => group)
+
+export const selectJobsFiltered = createSelector(
   getFiltersContract,
   getFiltersDate,
   getFiltersKeyword,

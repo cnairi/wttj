@@ -1,9 +1,10 @@
 import React from 'react'
-import { node } from 'prop-types'
+import { node, string } from 'prop-types'
+import { Text } from '@welcome-ui/text'
 
 import * as S from './styles'
 
-function Layout({ children }) {
+function Layout({ children, title }) {
   return (
     <S.Layout
       backgroundColor="light.900"
@@ -12,6 +13,9 @@ function Layout({ children }) {
       overflow="scroll"
       width={{ xs: '100%', lg: '80%' }}
     >
+      <Text textAlign="center" variant="h1">
+        {title}
+      </Text>
       {children}
     </S.Layout>
   )
@@ -19,6 +23,7 @@ function Layout({ children }) {
 
 Layout.propTypes /* remove-proptypes */ = {
   children: node,
+  title: string,
 }
 
 export default Layout

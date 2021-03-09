@@ -11,6 +11,7 @@ import { DateIcon } from '@welcome-ui/icons.date'
 import {
   clearContractTypeFilter,
   clearDateFilter,
+  clearGroupedBy,
   clearKeywordFilter,
   saveSearchFilters,
 } from '../../store/actions/filters'
@@ -20,9 +21,11 @@ import { openModale } from '../../store/actions/modale'
 function FiltersBar({
   clearContractTypeFilter,
   clearDateFilter,
+  clearGroupedBy,
   clearKeywordFilter,
   contractTypeSelected,
   filtersKeyword,
+  groupedByFilter,
   jobsTypes,
   saveSearchFilters,
 }) {
@@ -39,6 +42,14 @@ function FiltersBar({
       saveSearchFilters({ contractType })
     } else {
       clearContractTypeFilter()
+    }
+  }
+
+  const handleGroupBy = groupedBy => {
+    if (groupedBy) {
+      saveSearchFilters({ groupedBy })
+    } else {
+      clearGroupedBy()
     }
   }
 
@@ -92,6 +103,22 @@ function FiltersBar({
             onChange={handleDateChange}
             yearDropdownItemNumber={5}
           />
+          <ConnectedField
+            component={Select}
+            height={40}
+            id="department"
+            isClearable
+            label="Grouped by"
+            name="groups"
+            onChange={handleGroupBy}
+            options={[
+              { value: 'department_name', label: 'Department name' },
+              { value: 'office_name', label: 'Office name' },
+              { value: '', label: 'None' },
+            ]}
+            value={groupedByFilter}
+            width="100%"
+          />
           <button type="submit">Submit</button>
         </form>
       )}
@@ -103,9 +130,11 @@ function FiltersBar({
 FiltersBar.propTypes = {
   clearContractTypeFilter: func,
   clearDateFilter: func,
+  clearGroupedBy: func,
   clearKeywordFilter: func,
   contractTypeSelected: string,
   filtersKeyword: string,
+  groupedByFilter: string,
   jobsTypes: array,
   saveSearchFilters: func,
 }
@@ -115,15 +144,17 @@ const mapStateToProps = state => {
     contractTypeSelected: state.filters.contractType,
     jobsTypes: selectJobsTypes(state),
     filtersKeyword: state.filters.keyword,
+    groupedByFilter: state.filters.groupedBy,
   }
 }
 
 const mapDispatchToProps = dispatch => ({
   clearContractTypeFilter: () => dispatch(clearContractTypeFilter()),
   clearDateFilter: () => dispatch(clearDateFilter()),
+  clearGroupedBy: () => dispatch(clearGroupedBy()),
   clearKeywordFilter: () => dispatch(clearKeywordFilter()),
-  saveSearchFilters: ({ contractType, date, keyword }) =>
-    dispatch(saveSearchFilters({ contractType, date, keyword })),
+  saveSearchFilters: ({ contractType, date, groupedBy, keyword }) =>
+    dispatch(saveSearchFilters({ contractType, date, groupedBy, keyword })),
   openModale: (id, type) => dispatch(openModale(id, type)),
 })
 

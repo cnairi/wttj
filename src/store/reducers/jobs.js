@@ -3,6 +3,8 @@ export const FETCH_JOBS = 'FETCH_JOBS'
 const initialState = {
   jobsList: [],
   jobsTypes: [],
+  jobsOffices: [],
+  jobsDepartments: [],
 }
 
 const jobsReducer = (state = initialState, action) => {
@@ -10,7 +12,9 @@ const jobsReducer = (state = initialState, action) => {
     case FETCH_JOBS:
       return {
         ...state,
+        jobsDepartments: action.payload.jobsDepartments,
         jobsList: action.payload.jobsList,
+        jobsOffices: action.payload.jobsOffices,
         jobsTypes: action.payload.jobsTypes,
       }
     default:
