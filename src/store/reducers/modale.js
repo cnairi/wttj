@@ -1,5 +1,4 @@
-export const OPEN_MODALE = 'OPEN_MODALE'
-export const CLOSE_MODALE = 'CLOSE_MODALE'
+import { CLOSE_MODALE, OPEN_MODALE } from '../constants'
 
 const initialState = {
   id: null,

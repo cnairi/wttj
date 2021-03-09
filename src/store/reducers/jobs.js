@@ -1,4 +1,4 @@
-export const FETCH_JOBS = 'FETCH_JOBS'
+import { FETCH_JOBS } from '../constants'
 
 const initialState = {
   jobsList: [],

@@ -1,11 +1,13 @@
 import axios from 'axios'
 
-export const FETCH_JOBS = 'FETCH_JOBS'
+import { FETCH_JOBS } from '../constants'
+
+export const fetchJobsApiCall = () =>
+  axios.get('https://www.welcomekit.co/api/v1/embed?organization_reference=Pg4eV6k')
 
 export const fetchJobs = () => {
   return dispatch => {
-    axios
-      .get('https://www.welcomekit.co/api/v1/embed?organization_reference=Pg4eV6k')
+    fetchJobsApiCall()
       .then(response => {
         dispatch({
           type: FETCH_JOBS,
