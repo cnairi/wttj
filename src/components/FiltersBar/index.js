@@ -53,9 +53,11 @@ function FiltersBar({
 
   const validate = () => {}
 
+  const dateNow = new Date()
+
   return (
     <Form
-      initialValues={{ date: Date.now() }}
+      initialValues={{ date: dateNow.setFullYear(dateNow.getFullYear() - 3) }}
       onSubmit={onSubmit}
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
