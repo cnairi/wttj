@@ -1,6 +1,5 @@
 import React from 'react'
 import { Stack } from '@welcome-ui/stack'
-import { Box } from '@welcome-ui/box'
 import { array, func, string } from 'prop-types'
 
 import Title from '../Common/Title'
@@ -16,25 +15,27 @@ function JobsListOrdered({
   openModale,
 }) {
   return (
-    <Stack as="ul" spacing="xs">
+    <Stack as="ul" spacing="4xl">
       {jobsListOrdered.map((category, index) =>
         category.length ? (
-          <Box key={category}>
+          <div key={category}>
             <Title
               text={groupedBy === 'department' ? jobsDepartments[index] : jobsOffices[index]}
             />
-            {category.map(jobOffer => (
-              <JobsListItem
-                contractType={jobOffer.contract_type.en}
-                filtersKeyword={filtersKeyword}
-                jobId={jobOffer.id}
-                key={jobOffer.id}
-                name={jobOffer.name}
-                officeName={jobOffer.office.name}
-                onClickItem={openModale}
-              />
-            ))}
-          </Box>
+            <Stack as="ul" spacing="4xl">
+              {category.map(jobOffer => (
+                <JobsListItem
+                  contractType={jobOffer.contract_type.en}
+                  filtersKeyword={filtersKeyword}
+                  jobId={jobOffer.id}
+                  key={jobOffer.id}
+                  name={jobOffer.name}
+                  officeName={jobOffer.office.name}
+                  onClickItem={openModale}
+                />
+              ))}
+            </Stack>
+          </div>
         ) : null
       )}
     </Stack>

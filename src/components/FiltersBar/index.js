@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { ConnectedField } from '@welcome-ui/connected-field'
 import { Form } from 'react-final-form'
 import { array, func, instanceOf, oneOfType, string } from 'prop-types'
-import { InputText } from '@welcome-ui/input-text'
 import { Select } from '@welcome-ui/select'
+import { InputText } from '@welcome-ui/input-text'
 import { DatePicker } from '@welcome-ui/date-picker'
 import { DateIcon } from '@welcome-ui/icons.date'
 
@@ -26,6 +26,8 @@ import {
   SUBMIT,
 } from '../../constants'
 import Button from '../Common/Button'
+
+import * as S from './styles'
 
 function FiltersBar({
   clearContractTypeFilter,
@@ -62,45 +64,51 @@ function FiltersBar({
       onSubmit={onSubmit}
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
-          <ConnectedField
-            component={InputText}
-            isClearable
-            name="keyword"
-            onChange={handleSearch}
-            placeholder={SEARCH_PLACEHOLDER}
-            value={filtersKeyword}
-          />
-          <ConnectedField
-            component={Select}
-            isClearable
-            label={SELECT_CONTRACT_PLACEHOLDER}
-            name="contractType"
-            onChange={handleSelectJobType}
-            options={jobsTypes.map(jobTypes => ({
-              value: jobTypes.toLowerCase(),
-              label: jobTypes,
-            }))}
-            value={contractTypeSelected}
-          />
-          <ConnectedField
-            component={DatePicker}
-            icon={<DateIcon color="light.100" />}
-            label={DATE_PICKER_PLACEHOLDER}
-            maxDate={new Date()}
-            name="date"
-            onChange={handleDateChange}
-            {...(dateFilter && { value: dateFilter })}
-          />
-          <ConnectedField
-            component={Select}
-            isClearable
-            label={SELECT_GROUP_PLACEHOLDER}
-            name="group"
-            onChange={handleGroupBy}
-            options={SELECT_GROUP_OPTIONS}
-            value={groupedByFilter}
-          />
-          <Button text={SUBMIT} type="submit" variant="secondary" />
+          <S.FormContent
+            alignItems={{ xs: 'normal', lg: 'flex-end' }}
+            direction={{ xs: 'column', lg: 'row' }}
+            justifyContent="space-around"
+          >
+            <S.SearchBar
+              component={InputText}
+              isClearable
+              name="keyword"
+              onChange={handleSearch}
+              placeholder={SEARCH_PLACEHOLDER}
+              value={filtersKeyword}
+            />
+            <ConnectedField
+              component={Select}
+              isClearable
+              label={SELECT_CONTRACT_PLACEHOLDER}
+              name="contractType"
+              onChange={handleSelectJobType}
+              options={jobsTypes.map(jobTypes => ({
+                value: jobTypes.toLowerCase(),
+                label: jobTypes,
+              }))}
+              value={contractTypeSelected}
+            />
+            <ConnectedField
+              component={DatePicker}
+              icon={<DateIcon color="light.100" />}
+              label={DATE_PICKER_PLACEHOLDER}
+              maxDate={new Date()}
+              name="date"
+              onChange={handleDateChange}
+              {...(dateFilter && { value: dateFilter })}
+            />
+            <ConnectedField
+              component={Select}
+              isClearable
+              label={SELECT_GROUP_PLACEHOLDER}
+              name="group"
+              onChange={handleGroupBy}
+              options={SELECT_GROUP_OPTIONS}
+              value={groupedByFilter}
+            />
+            <Button text={SUBMIT} type="submit" variant="secondary" />
+          </S.FormContent>
         </form>
       )}
       validate={validate}

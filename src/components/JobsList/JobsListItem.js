@@ -1,5 +1,4 @@
 import React from 'react'
-import { Box } from '@welcome-ui/box'
 import { Stack } from '@welcome-ui/stack'
 import { Text } from '@welcome-ui/text'
 import { func, number, string } from 'prop-types'
@@ -20,10 +19,9 @@ function JobsListItem({ contractType, filtersKeyword, jobId, name, officeName, o
       alignItems={{ xs: 'flex-start', lg: 'center' }}
       display="flex"
       justifyContent={{ xs: 'flex-start', lg: 'space-between' }}
-      p="xxl"
       width="100%"
     >
-      <Box>
+      <Stack marginBottom={{ xs: 'md', lg: 0 }} spacing="xs">
         <Text fontSize="1.25rem" variant="h3">
           {highlightContent(name, filtersKeyword)}
         </Text>
@@ -35,7 +33,7 @@ function JobsListItem({ contractType, filtersKeyword, jobId, name, officeName, o
             {officeName}
           </Text>
         </Stack>
-      </Box>
+      </Stack>
       <Button onClickAction={handleJobsDetailModal} text={CTA} />
     </S.ItemContainer>
   )

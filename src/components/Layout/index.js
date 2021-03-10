@@ -11,6 +11,7 @@ function Layout({ children, title }) {
       borderRadius="sm"
       height={{ xs: 'auto', lg: '80vh' }}
       overflow="scroll"
+      p="xxl"
       width={{ xs: '100%', lg: '80%' }}
     >
       <Text textAlign="center" variant="h1">

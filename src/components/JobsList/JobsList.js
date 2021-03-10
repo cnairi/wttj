@@ -42,7 +42,7 @@ function JobsList({
   }
 
   return jobsListToDisplay?.length ? (
-    <Stack as="ul" spacing="xs">
+    <Stack as="ul" marginTop="4xl" spacing="4xl">
       {jobsListToDisplay.map(jobOffer => (
         <JobsListItem
           contractType={jobOffer.contract_type.en}

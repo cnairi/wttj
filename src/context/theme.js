@@ -6,6 +6,9 @@ const theme = createTheme({
       500: '#FFCD00',
     },
   },
+  breakpoints: {
+    lg: 1024,
+  },
   buttons: {
     primary: {
       color: '',
