@@ -2,7 +2,7 @@ import React from 'react'
 import { bool, func, object, string } from 'prop-types'
 import { Button } from '@welcome-ui/button'
 
-function ButtonComponent({ external, link, onClickAction, text }) {
+function ButtonComponent({ external, link, onClickAction, text, variant }) {
   const actionProps = external
     ? {
         as: 'a',
@@ -15,7 +15,7 @@ function ButtonComponent({ external, link, onClickAction, text }) {
       }
 
   return (
-    <Button {...actionProps} primary="true" width={{ xs: '100%', lg: 'auto' }}>
+    <Button {...actionProps} variant={variant} width={{ xs: '100%', lg: 'auto' }}>
       {text}
     </Button>
   )
@@ -26,6 +26,11 @@ ButtonComponent.propTypes /* remove-proptypes */ = {
   link: object,
   onClickAction: func,
   text: string,
+  variant: string,
+}
+
+ButtonComponent.defaultProps = {
+  variant: 'primary',
 }
 
 export default ButtonComponent

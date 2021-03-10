@@ -25,6 +25,7 @@ import {
   SELECT_GROUP_PLACEHOLDER,
   SUBMIT,
 } from '../../constants'
+import Button from '../Common/Button'
 
 function FiltersBar({
   clearContractTypeFilter,
@@ -99,7 +100,7 @@ function FiltersBar({
             options={SELECT_GROUP_OPTIONS}
             value={groupedByFilter}
           />
-          <button type="submit">{SUBMIT}</button>
+          <Button text={SUBMIT} type="submit" variant="secondary" />
         </form>
       )}
       validate={validate}
