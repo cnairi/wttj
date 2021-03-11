@@ -14,6 +14,10 @@ You can enter keywords for your research in the "Your dream job?" field. It will
 
 We have decided to use wttj config front for our project. For more info go to https://github.com/WTTJ/wttj-config-front, check .eslintrc.js and prettier.config.js.
 
+# Translations
+
+We have implemented i18n on our project. For now, only EN and FR versions are available.
+
 # Responsiveness
 
 Our website is responsive. We did our best to offer the same quality on mobile, tablet & desktop.
@@ -27,7 +31,7 @@ https://wttj-camille-nairi.herokuapp.com/ We used Heroku to deploy our app. Our 
 Here is what we are planning for our new release :
 
 - a11y is not perfect yet. We're optimizing it for our next release.
-- i18n will be implemented on the project with EN, FR, ES, CS and SK locales.
+- ES, CS and SK locales would be implemented, as is the case on the WTTJ website.
 - Implementation of storybook to help other developers to use our components.
 - Improve testing by implementing Cypress.
 - Save

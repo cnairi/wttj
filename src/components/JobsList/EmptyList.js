@@ -1,13 +1,13 @@
 import React from 'react'
 import { Alert } from '@welcome-ui/alert'
-
-import { EMPTY_JOBS_LIST_TEXT, EMPTY_JOBS_LIST_TITLE } from '../../constants'
+import { useTranslation } from 'react-i18next'
 
 function EmptyList() {
+  const { t } = useTranslation()
   return (
     <Alert variant="info">
-      <Alert.Title>{EMPTY_JOBS_LIST_TITLE}</Alert.Title>
-      <span>{EMPTY_JOBS_LIST_TEXT}</span>
+      <Alert.Title>{t('filters.empty_list_title')}</Alert.Title>
+      <span>{t('filters.empty_list_text')}</span>
     </Alert>
   )
 }

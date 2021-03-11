@@ -2,14 +2,17 @@ import React from 'react'
 import { Stack } from '@welcome-ui/stack'
 import { Text } from '@welcome-ui/text'
 import { func, number, string } from 'prop-types'
+import { useTranslation } from 'react-i18next'
 
 import highlightContent from '../../utils/highlightContent'
 import Button from '../Common/Button'
-import { CTA, JOB_DETAILS_MODALE } from '../../constants'
+import { JOB_DETAILS_MODALE } from '../../constants'
 
 import * as S from './styles'
 
 function JobsListItem({ contractType, filtersKeyword, jobId, name, officeName, onClickItem }) {
+  const { t } = useTranslation()
+
   const handleJobsDetailModal = () => {
     onClickItem({ id: jobId, type: JOB_DETAILS_MODALE })
   }
@@ -34,7 +37,7 @@ function JobsListItem({ contractType, filtersKeyword, jobId, name, officeName, o
           </Text>
         </Stack>
       </Stack>
-      <Button onClickAction={handleJobsDetailModal} text={CTA} />
+      <Button onClickAction={handleJobsDetailModal} text={t('common.cta')} />
     </S.ItemContainer>
   )
 }

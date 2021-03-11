@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { ConnectedField } from '@welcome-ui/connected-field'
 import { Form } from 'react-final-form'
@@ -7,6 +7,7 @@ import { Select } from '@welcome-ui/select'
 import { InputText } from '@welcome-ui/input-text'
 import { DatePicker } from '@welcome-ui/date-picker'
 import { DateIcon } from '@welcome-ui/icons.date'
+import { useTranslation } from 'react-i18next'
 
 import {
   clearContractTypeFilter,
@@ -17,14 +18,6 @@ import {
 } from '../../store/actions/filters'
 import { selectJobsTypes } from '../../store/selectors/jobs'
 import { openModale } from '../../store/actions/modale'
-import {
-  DATE_PICKER_PLACEHOLDER,
-  SEARCH_PLACEHOLDER,
-  SELECT_CONTRACT_PLACEHOLDER,
-  SELECT_GROUP_OPTIONS,
-  SELECT_GROUP_PLACEHOLDER,
-  SUBMIT,
-} from '../../constants'
 import Button from '../Common/Button'
 
 import * as S from './styles'
@@ -41,6 +34,17 @@ function FiltersBar({
   jobsTypes,
   saveSearchFilters,
 }) {
+  const [seletGroupOptions, setSelectGroupOptions] = useState(null)
+  const { t } = useTranslation()
+
+  useEffect(() => {
+    setSelectGroupOptions([
+      { value: 'department', label: t('filters.department_name') },
+      { value: 'office', label: t('filters.office_name') },
+      { value: '', label: t('filters.none') },
+    ])
+  }, [t])
+
   const handleSearch = e =>
     e.target.value ? saveSearchFilters({ keyword: e.target.value }) : clearKeywordFilter()
 
@@ -74,40 +78,43 @@ function FiltersBar({
               isClearable
               name="keyword"
               onChange={handleSearch}
-              placeholder={SEARCH_PLACEHOLDER}
+              placeholder={t('filters.search_label')}
               value={filtersKeyword}
             />
             <ConnectedField
               component={Select}
               isClearable
-              label={SELECT_CONTRACT_PLACEHOLDER}
+              label={t('filters.contract_type_label')}
               name="contractType"
               onChange={handleSelectJobType}
               options={jobsTypes.map(jobTypes => ({
                 value: jobTypes.toLowerCase(),
                 label: jobTypes,
               }))}
+              placeholder={t('filters.contract_type_placeholder')}
               value={contractTypeSelected}
             />
             <ConnectedField
               component={DatePicker}
               icon={<DateIcon color="light.100" />}
-              label={DATE_PICKER_PLACEHOLDER}
+              label={t('filters.date_label')}
               maxDate={new Date()}
               name="date"
               onChange={handleDateChange}
               {...(dateFilter && { value: dateFilter })}
             />
-            <ConnectedField
-              component={Select}
-              isClearable
-              label={SELECT_GROUP_PLACEHOLDER}
-              name="group"
-              onChange={handleGroupBy}
-              options={SELECT_GROUP_OPTIONS}
-              value={groupedByFilter}
-            />
-            <Button text={SUBMIT} type="submit" variant="secondary" />
+            {seletGroupOptions && (
+              <ConnectedField
+                component={Select}
+                isClearable
+                label={t('filters.grouped_by_label')}
+                name="group"
+                onChange={handleGroupBy}
+                options={seletGroupOptions}
+                value={groupedByFilter}
+              />
+            )}
+            <Button text={t('common.submit')} type="submit" variant="secondary" />
           </S.FormContent>
         </form>
       )}
