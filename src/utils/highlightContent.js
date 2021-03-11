@@ -9,7 +9,7 @@ const highlightContent = (content, filtersKeyword) => {
   const highlightedContent = content.split(matchRegexp).reduce((accumulator, currentValue, i) => {
     if (!i) return [currentValue]
     return accumulator.concat(
-      <span key={filtersKeyword + currentValue} style={{ color: '#FFCD00' }}>
+      <span key={filtersKeyword + currentValue} style={{ backgroundColor: '#FFCD00' }}>
         {match[i - 1]}
       </span>,
       currentValue

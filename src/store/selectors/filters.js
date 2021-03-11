@@ -18,6 +18,11 @@ export const selectFiltersActivated = createSelector(
 
 export const selectGroupedByActivated = createSelector(getGroupedByActivated, group => group)
 
+const keywordsIncludedInJobDetails = (job, keywords) =>
+  job.name.toLowerCase().includes(keywords.toLowerCase()) ||
+  job.description.toLowerCase().includes(keywords.toLowerCase()) ||
+  job.profile.toLowerCase().includes(keywords.toLowerCase())
+
 export const selectJobsFiltered = createSelector(
   getFiltersContract,
   getFiltersDate,
@@ -26,7 +31,7 @@ export const selectJobsFiltered = createSelector(
   (contractType, date, keywords, allJobs) =>
     allJobs?.filter(
       job =>
-        job.name.toLowerCase().includes(keywords.toLowerCase()) &&
+        keywordsIncludedInJobDetails(job, keywords) &&
         (job.contract_type.en.toLowerCase() === contractType || !contractType) &&
         (!date || new Date(parseDate(job.created_at.en)) - new Date(date) > 0)
     )

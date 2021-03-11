@@ -6,12 +6,13 @@ import { selectJobDetails } from '../../../store/selectors/jobs'
 import Modale from './Modale'
 
 const mapStateToProps = state => {
-  const { modale } = state
+  const { filters, modale } = state
   return {
+    data: selectJobDetails(state),
+    filtersKeyword: filters.keyword,
     id: modale.id,
     isOpen: modale.isOpen,
     type: modale.type,
-    data: selectJobDetails(state),
   }
 }
 

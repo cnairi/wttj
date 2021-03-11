@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { bool, func, object } from 'prop-types'
+import { bool, func, object, string } from 'prop-types'
 
 import wttjImage from '../../../assets/images/fr-wttj.jpeg'
 import wttjLogo from '../../../assets/images/logo-wttj.jpeg'
@@ -8,7 +8,7 @@ import Content from './Content'
 import Header from './Header'
 import * as S from './styles'
 
-function Modale({ closeModale, data, isOpen }) {
+function Modale({ closeModale, data, filtersKeyword, isOpen }) {
   const [dataAttribute, setDataAttribute] = useState({})
 
   useEffect(() => {
@@ -56,6 +56,7 @@ function Modale({ closeModale, data, isOpen }) {
           createdAt={data.created_at.en}
           departmentName={data.department.name}
           description={data.description}
+          filtersKeyword={filtersKeyword}
           profile={data.profile}
           recruitmentProcess={data.recruitment_process}
           websitesUrl={data.websites_urls}
@@ -68,6 +69,7 @@ function Modale({ closeModale, data, isOpen }) {
 Modale.propTypes /* remove-proptypes */ = {
   closeModale: func,
   data: object,
+  filtersKeyword: string,
   isOpen: bool,
 }
 

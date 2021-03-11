@@ -7,6 +7,7 @@ import ReactHtmlParser from 'react-html-parser'
 
 import Button from '../Button'
 import SectionTitle from '../Title'
+import highlightContent from '../../../utils/highlightContent'
 
 import * as S from './styles'
 
@@ -15,6 +16,7 @@ function ModaleContent({
   createdAt,
   departmentName,
   description,
+  filtersKeyword,
   profile,
   recruitmentProcess,
   websitesUrl,
@@ -26,6 +28,9 @@ function ModaleContent({
           {node.children[0].data}
         </Link>
       )
+    }
+    if (node.data?.includes(filtersKeyword)) {
+      return highlightContent(node.data, filtersKeyword)
     }
   }
 
@@ -55,6 +60,7 @@ ModaleContent.propTypes /* remove-proptypes */ = {
   createdAt: string,
   departmentName: string,
   description: string,
+  filtersKeyword: string,
   profile: string,
   recruitmentProcess: string,
   websitesUrl: array,
