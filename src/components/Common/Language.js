@@ -37,6 +37,7 @@ function Lang({ i18n, t }) {
   }
 
   const handleSubmit = () => {
+    // eslint-disable-next-line no-console
     console.debug
   }
 
