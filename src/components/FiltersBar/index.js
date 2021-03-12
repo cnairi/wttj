@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { ConnectedField } from '@welcome-ui/connected-field'
-import { Form } from 'react-final-form'
+import { Form as FinalForm } from 'react-final-form'
 import { array, func, instanceOf, oneOfType, string } from 'prop-types'
 import { Select } from '@welcome-ui/select'
 import { InputText } from '@welcome-ui/input-text'
@@ -56,17 +56,19 @@ function FiltersBar({
 
   const handleDateChange = date => (date ? saveSearchFilters({ date }) : clearDateFilter())
 
-  const onSubmit = () => {}
-
-  const validate = () => {}
+  const handleSubmit = () => {
+    // eslint-disable-next-line no-console
+    console.debug
+  }
 
   const dateNow = new Date()
 
   return (
-    <Form
+    <FinalForm
       initialValues={{ date: dateNow.setFullYear(dateNow.getFullYear() - 3) }}
-      onSubmit={onSubmit}
-      render={({ handleSubmit }) => (
+      onSubmit={handleSubmit}
+    >
+      {({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
           <S.FormContent
             alignItems={{ xs: 'normal', lg: 'flex-end' }}
@@ -118,8 +120,7 @@ function FiltersBar({
           </S.FormContent>
         </form>
       )}
-      validate={validate}
-    />
+    </FinalForm>
   )
 }
 
