@@ -35,7 +35,11 @@ Husky is implemented to automatize pre-commit hooks checks. Troubleshooting on i
 
 # Deployment and build
 
-https://wttj-camille-nairi.herokuapp.com/ We used Heroku to deploy our app. Our app is connected to Github and to our wttj repo. Automatic deploys from main are enabled.
+WTTJ app is available at :
+
+https://wttj-camille-nairi.herokuapp.com/
+
+We used Heroku to deploy our app. Our app is connected to Github and to our wttj repo. Automatic deploys from main are enabled.
 
 # Testing
 
