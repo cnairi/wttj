@@ -5,10 +5,8 @@ import { Text } from '@welcome-ui/text'
 import { CoverLetterIcon } from '@welcome-ui/icons.cover_letter'
 import { CrossIcon } from '@welcome-ui/icons.cross'
 import { LocationIcon } from '@welcome-ui/icons.location'
-
-import { COMPANY_NAME, JOB_ILLUSTRATION_ALT, LOGO_ALT } from '../../../constants'
-
-import * as S from './styles'
+import { COMPANY_NAME, JOB_ILLUSTRATION_ALT, LOGO_ALT } from '@constants'
+import * as S from '@components/Common/Modale/styles'
 
 function Header({ city, closeModaleWithAnim, contractType, country, image, logo, name }) {
   return (

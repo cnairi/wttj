@@ -1,10 +1,8 @@
 import React from 'react'
 import { Stack } from '@welcome-ui/stack'
 import { array, func, string } from 'prop-types'
-
-import Title from '../Common/Title'
-
-import JobsListItem from './JobsListItem'
+import Title from '@components/Common/Title'
+import JobsListItem from '@components/JobsList/JobsListItem'
 
 function JobsListOrdered({
   filtersKeyword,

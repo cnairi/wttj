@@ -1,15 +1,13 @@
 import { connect } from 'react-redux'
-
-import { fetchJobs } from '../../store/actions/jobs'
-import { openModale } from '../../store/actions/modale'
+import { fetchJobs } from '@store/actions/jobs'
+import { openModale } from '@store/actions/modale'
 import {
   selectFiltersActivated,
   selectGroupedByActivated,
   selectJobsFiltered,
   selectJobsListOrdered,
-} from '../../store/selectors/filters'
-
-import JobsList from './JobsList'
+} from '@store/selectors/filters'
+import JobsList from '@components/JobsList/JobsList'
 
 const mapStateToProps = state => {
   const { filters, jobs } = state

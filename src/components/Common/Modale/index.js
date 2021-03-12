@@ -1,9 +1,7 @@
 import { connect } from 'react-redux'
-
-import { closeModale } from '../../../store/actions/modale'
-import { selectJobDetails } from '../../../store/selectors/jobs'
-
-import Modale from './Modale'
+import { closeModale } from '@store/actions/modale'
+import { selectJobDetails } from '@store/selectors/jobs'
+import Modale from '@components/Common/Modale/Modale'
 
 const mapStateToProps = state => {
   const { filters, modale } = state

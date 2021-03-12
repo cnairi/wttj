@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { bool, func, object, string } from 'prop-types'
-
-import wttjImage from '../../../assets/images/fr-wttj.jpeg'
-import wttjLogo from '../../../assets/images/logo-wttj.jpeg'
-
-import Content from './Content'
-import Header from './Header'
-import * as S from './styles'
+import wttjImage from '@assets/images/fr-wttj.jpeg'
+import wttjLogo from '@assets/images/logo-wttj.jpeg'
+import Content from '@components/Common/Modale/Content'
+import Header from '@components/Common/Modale/Header'
+import * as S from '@components/Common/Modale/styles'
 
 function Modale({ closeModale, data, filtersKeyword, isOpen }) {
   const [dataAttribute, setDataAttribute] = useState({})

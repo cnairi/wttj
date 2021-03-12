@@ -4,12 +4,10 @@ import { Link } from '@welcome-ui/link'
 import { Tag } from '@welcome-ui/tag'
 import { Text } from '@welcome-ui/text'
 import ReactHtmlParser from 'react-html-parser'
-
-import Button from '../Button'
-import SectionTitle from '../Title'
-import highlightContent from '../../../utils/highlightContent'
-
-import * as S from './styles'
+import Button from '@components/Common/Button'
+import SectionTitle from '@components/Common/Title'
+import highlightContent from '@utils/highlightContent'
+import * as S from '@components/Common/Modale/styles'
 
 function ModaleContent({
   address,

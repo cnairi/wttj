@@ -8,19 +8,17 @@ import { InputText } from '@welcome-ui/input-text'
 import { DatePicker } from '@welcome-ui/date-picker'
 import { DateIcon } from '@welcome-ui/icons.date'
 import { useTranslation } from 'react-i18next'
-
 import {
   clearContractTypeFilter,
   clearDateFilter,
   clearGroupedBy,
   clearKeywordFilter,
   saveSearchFilters,
-} from '../../store/actions/filters'
-import { selectJobsTypes } from '../../store/selectors/jobs'
-import { openModale } from '../../store/actions/modale'
-import Button from '../Common/Button'
-
-import * as S from './styles'
+} from '@store/actions/filters'
+import { selectJobsTypes } from '@store/selectors/jobs'
+import { openModale } from '@store/actions/modale'
+import Button from '@components/Common/Button'
+import * as S from '@components/FiltersBar/styles'
 
 function FiltersBar({
   clearContractTypeFilter,

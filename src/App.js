@@ -2,14 +2,13 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { WuiProvider } from '@welcome-ui/core'
 import { useTranslation } from 'react-i18next'
-
-import configureStore from './store/configureStore'
-import FiltersBar from './components/FiltersBar'
-import Header from './components/Common/Header'
-import JobsList from './components/JobsList'
-import Layout from './components/Layout'
-import Modale from './components/Common/Modale/'
-import theme from './context/theme'
+import FiltersBar from '@components/FiltersBar'
+import Header from '@components/Common/Header'
+import JobsList from '@components/JobsList'
+import Layout from '@components/Layout'
+import Modale from '@components/Common/Modale/'
+import configureStore from '@store/configureStore'
+import theme from '@context/theme'
 
 function App() {
   const { t } = useTranslation()

@@ -1,25 +1,25 @@
 {
-    "common": {
-        "submit": "Search",
-        "cta": "See more",
-        "languages": {
-            "en": "English",
-            "fr": "French"
-        }
-    },
-    "jobs": {
-        "offers": "Our offers"
-    },
-    "filters": {
-        "date_label": "Published after",
-        "search_label": "Your dream job?",
-        "contract_type_label": "Contract Type",
-        "contract_type_placeholder": "Choose from...",
-        "grouped_by_label": "Grouped by",
-        "department_name": "Department name",
-        "office_name": "Office name",
-        "none": "",
-        "empty_list_title": "Try again with other requirements or come back later!",
-        "empty_list_text": "No results found for these criteria. Your dream job is on his way to Welcome to the Jungle platform."
+  "common": {
+    "submit": "Search",
+    "cta": "See more",
+    "languages": {
+      "en": "English",
+      "fr": "French"
     }
+  },
+  "jobs": {
+    "offers": "Our offers"
+  },
+  "filters": {
+    "date_label": "Published after",
+    "search_label": "Your dream job?",
+    "contract_type_label": "Contract Type",
+    "contract_type_placeholder": "Choose from...",
+    "grouped_by_label": "Grouped by",
+    "department_name": "Department name",
+    "office_name": "Office name",
+    "none": "",
+    "empty_list_title": "Try again with other requirements or come back later!",
+    "empty_list_text": "No results found for these criteria. Your dream job is on his way to Welcome to the Jungle platform."
+  }
 }

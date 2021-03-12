@@ -1,8 +1,7 @@
 import React from 'react'
 import { node, string } from 'prop-types'
 import { Text } from '@welcome-ui/text'
-
-import * as S from './styles'
+import * as S from '@components/Layout/styles'
 
 function Layout({ children, title }) {
   return (

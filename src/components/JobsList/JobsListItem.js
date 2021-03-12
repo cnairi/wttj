@@ -3,12 +3,10 @@ import { Stack } from '@welcome-ui/stack'
 import { Text } from '@welcome-ui/text'
 import { func, number, string } from 'prop-types'
 import { useTranslation } from 'react-i18next'
-
-import highlightContent from '../../utils/highlightContent'
-import Button from '../Common/Button'
-import { JOB_DETAILS_MODALE } from '../../constants'
-
-import * as S from './styles'
+import highlightContent from '@utils/highlightContent'
+import Button from '@components/Common/Button'
+import { JOB_DETAILS_MODALE } from '@constants'
+import * as S from '@components/JobsList/styles'
 
 function JobsListItem({ contractType, filtersKeyword, jobId, name, officeName, onClickItem }) {
   const { t } = useTranslation()

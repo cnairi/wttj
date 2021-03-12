@@ -5,8 +5,7 @@ import { Form as FinalForm } from 'react-final-form'
 import { withTranslation } from 'react-i18next'
 import { func, object } from 'prop-types'
 import { ConnectedField } from '@welcome-ui/connected-field'
-
-import { LOCALES } from '../../constants/locales'
+import { LOCALES } from '@constants/locales'
 
 function Lang({ i18n, t }) {
   const [lang, setLang] = useState(i18n.language)

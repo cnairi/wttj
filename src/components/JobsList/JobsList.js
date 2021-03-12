@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
 import { array, bool, func, string } from 'prop-types'
 import { Stack } from '@welcome-ui/stack'
-
-import JobsListItem from './JobsListItem'
-import JobsListOrdered from './JobsListOrdered'
-import EmptyList from './EmptyList'
+import JobsListItem from '@components/JobsList/JobsListItem'
+import JobsListOrdered from '@components/JobsList/JobsListOrdered'
+import EmptyList from '@components/JobsList/EmptyList'
 
 function JobsList({
   fetchJobs,

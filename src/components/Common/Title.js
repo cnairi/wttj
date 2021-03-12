@@ -1,8 +1,7 @@
 import React from 'react'
 import { string } from 'prop-types'
 import { Box } from '@welcome-ui/box'
-
-import * as S from './styles'
+import * as S from '@components/Common/styles'
 
 function Title({ text }) {
   return (

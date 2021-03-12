@@ -1,9 +1,8 @@
 import React from 'react'
 import { Box } from '@welcome-ui/box'
-
-import Language from './Language'
-import Logo from './Logo'
-import * as S from './styles'
+import Language from '@components/Common/Language'
+import Logo from '@components/Common/Logo'
+import * as S from '@components/Common/styles'
 
 function Header() {
   return (

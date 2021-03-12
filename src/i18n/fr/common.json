@@ -1,25 +1,25 @@
 {
-    "common": {
-        "submit": "Rechercher",
-        "cta": "Voir plus",
-        "languages": {
-            "en": "Anglais",
-            "fr": "Français"
-        }
-    },
-    "jobs": {
-        "offers": "Nos Offres"
-    },
-    "filters": {
-        "date_label": "Publiées après le",
-        "search_label": "Votre job idéal ?",
-        "contract_type_label": "Type de contrat",
-        "contract_type_placeholder": "Sélectionner...",
-        "grouped_by_label": "Regrouper par",
-        "department_name": "Professions",
-        "office_name": "Bureau",
-        "none": "",
-        "empty_list_title": "Modifiez vos critères de recherche ou réessayer plus tard.",
-        "empty_list_text": "Aucun résultat trouvé. Restez connecté, le travail de vos rêve est en chemin !"
+  "common": {
+    "submit": "Rechercher",
+    "cta": "Voir plus",
+    "languages": {
+      "en": "Anglais",
+      "fr": "Français"
     }
+  },
+  "jobs": {
+    "offers": "Nos Offres"
+  },
+  "filters": {
+    "date_label": "Publiées après le",
+    "search_label": "Votre job idéal ?",
+    "contract_type_label": "Type de contrat",
+    "contract_type_placeholder": "Sélectionner...",
+    "grouped_by_label": "Regrouper par",
+    "department_name": "Professions",
+    "office_name": "Bureau",
+    "none": "",
+    "empty_list_title": "Modifiez vos critères de recherche ou réessayer plus tard.",
+    "empty_list_text": "Aucun résultat trouvé. Restez connecté, le travail de vos rêve est en chemin !"
+  }
 }
