@@ -8,7 +8,12 @@
     }
   },
   "jobs": {
-    "offers": "Nos Offres"
+    "offers": "Nos Offres",
+    "description": "Descriptif du poste",
+    "profile": "Profil recherché",
+    "process": "Processus de recrutement",
+    "location": "Où nous trouver",
+    "apply": "Postuler"
   },
   "filters": {
     "date_label": "Publiées après le",

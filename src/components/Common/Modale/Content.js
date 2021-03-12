@@ -8,6 +8,8 @@ import Button from '@components/Common/Button'
 import SectionTitle from '@components/Common/Title'
 import highlightContent from '@utils/highlightContent'
 import * as S from '@components/Common/Modale/styles'
+import { JOB_DETAILS_LINK } from '@constants'
+import { useTranslation } from 'react-i18next'
 
 function ModaleContent({
   address,
@@ -19,6 +21,8 @@ function ModaleContent({
   recruitmentProcess,
   websitesUrl,
 }) {
+  const { t } = useTranslation()
+
   const transform = node => {
     if (node.type === 'tag' && node.name === 'a') {
       return (
@@ -36,18 +40,18 @@ function ModaleContent({
     <S.JobContent p="4xl">
       <Text>{createdAt}</Text>
       <Tag variant="primary">{departmentName}</Tag>
-      <SectionTitle text="Job Description" />
+      <SectionTitle text={t('jobs.description')} />
       {ReactHtmlParser(description, { transform })}
-      <SectionTitle text="For Who?" />
+      <SectionTitle text={t('jobs.profile')} />
       {ReactHtmlParser(profile, { transform })}
-      <SectionTitle text="Recruitment process" />
+      <SectionTitle text={t('jobs.process')} />
       {ReactHtmlParser(recruitmentProcess, { transform })}
-      <SectionTitle text="Where?" />
+      <SectionTitle text={t('jobs.location')} />
       <Text>{address}</Text>
       <Button
         external
-        link={websitesUrl.find(url => url.website_reference === 'wttj_fr')}
-        text="Apply"
+        link={websitesUrl.find(url => url.website_reference === JOB_DETAILS_LINK)}
+        text={t('jobs.apply')}
       />
     </S.JobContent>
   )

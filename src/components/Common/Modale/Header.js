@@ -11,15 +11,19 @@ import * as S from '@components/Common/Modale/styles'
 function Header({ city, closeModaleWithAnim, contractType, country, image, logo, name }) {
   return (
     <S.ImageContainer height={{ xs: '30rem', lg: '20.125rem' }}>
-      <CrossIcon
-        color="light.900"
-        cursor="pointer"
+      <S.ExitIconContainer
+        alignItems="center"
+        display="flex"
+        justifyContent="center"
         onClick={closeModaleWithAnim}
+        p="md"
         position="absolute"
         right="20px"
         top="20px"
         zIndex={1}
-      />
+      >
+        <CrossIcon color="light.900" />
+      </S.ExitIconContainer>
       <S.JobCard
         alignItems="center"
         display="flex"

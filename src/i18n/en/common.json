@@ -8,7 +8,12 @@
     }
   },
   "jobs": {
-    "offers": "Our offers"
+    "offers": "Our offers",
+    "description": "Job Description",
+    "profile": "Our dream candidate",
+    "process": "Recruitment process",
+    "location": "Location",
+    "apply": "Apply"
   },
   "filters": {
     "date_label": "Published after",

@@ -29,6 +29,35 @@ export const Dialog = styled(Box)`
   }
 `
 
+export const ExitIconContainer = styled(Box)`
+  cursor: pointer;
+`
+
+export const ImageContainer = styled(Box)`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 0;
+
+  &::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    content: '';
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`
+
 export const JobCard = styled(Box)`
   position: absolute;
   z-index: 1;
@@ -76,30 +105,6 @@ export const JobContent = styled(Box)`
   }
 `
 
-export const ImageContainer = styled(Box)`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 0;
-
-  &::after {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    content: '';
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-`
 export const LogoContainer = styled(Box)`
   img {
     width: 100%;
@@ -107,6 +112,7 @@ export const LogoContainer = styled(Box)`
     object-fit: cover;
   }
 `
+
 export const Overlay = styled(Box)`
   cursor: pointer;
 `

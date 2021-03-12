@@ -6,7 +6,7 @@ import Content from '@components/Common/Modale/Content'
 import Header from '@components/Common/Modale/Header'
 import * as S from '@components/Common/Modale/styles'
 
-function Modale({ closeModale, data, filtersKeyword, isOpen }) {
+function ModaleContainer({ closeModale, data, filtersKeyword, isOpen }) {
   const [dataAttribute, setDataAttribute] = useState({})
 
   useEffect(() => {
@@ -64,11 +64,11 @@ function Modale({ closeModale, data, filtersKeyword, isOpen }) {
   ) : null
 }
 
-Modale.propTypes /* remove-proptypes */ = {
+ModaleContainer.propTypes /* remove-proptypes */ = {
   closeModale: func,
   data: object,
   filtersKeyword: string,
   isOpen: bool,
 }
 
-export default Modale
+export default ModaleContainer

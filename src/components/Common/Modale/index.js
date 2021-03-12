@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { closeModale } from '@store/actions/modale'
 import { selectJobDetails } from '@store/selectors/jobs'
-import Modale from '@components/Common/Modale/Modale'
+import ModaleContainer from '@components/Common/Modale/Container'
 
 const mapStateToProps = state => {
   const { filters, modale } = state
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => ({
   closeModale: () => dispatch(closeModale()),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modale)
+export default connect(mapStateToProps, mapDispatchToProps)(ModaleContainer)
