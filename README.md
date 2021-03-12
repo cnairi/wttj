@@ -49,6 +49,7 @@ Here is what we are planning for our new release :
 - A Storybook documents this project, but we will complete it with all components for the V2.
 - Improve testing by implementing Cypress and complete tests for react testing library. Objective: 100% quality coverage!
 - Save search option for user : either by adding params to our url, or with redux-persist.
+- Fuzzy match using fuse.js (https://fusejs.io/) or other react fuse-based packaged. We are currently improving the reliability of the proposed matches.
 
 # Users feedbacks
 
