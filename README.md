@@ -8,7 +8,7 @@ Be sure to use the right version of node, then run "yarn start" at the root of t
 
 # Aliases
 
-# https://github.com/storybookjs/storybook/issues/7205#issuecomment-507811588
+https://github.com/storybookjs/storybook/issues/7205#issuecomment-507811588
 
 In order to have aliases working on Storybook, tests files and src files, please read this carefully. As we did'nt want to eject cra, we use create-react-app-rewired. We had difficulties launching storybook with our new aliases and found the provided linked solution. First, add your alias to config-overrides.js in the root directory. Then, create another line in jsconfig.json (root). For testing, make sure to add the corresponding line in our package.json. Finally, add the alias to .storybook/webpack.config.js
 
