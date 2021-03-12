@@ -7,6 +7,7 @@ export const SAVE_FILTERS = 'SAVE_FILTERS'
 
 // JOBS
 export const FETCH_JOBS = 'FETCH_JOBS'
+export const API_CALL = 'https://www.welcomekit.co/api/v1/embed?organization_reference=Pg4eV6k'
 
 // MODALE
 export const OPEN_MODALE = 'OPEN_MODALE'
