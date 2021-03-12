@@ -13,7 +13,7 @@ jest.mock('react-i18next', () => ({
   },
 }))
 
-describe('Component Common <Language />', () => {
+describe('Component JobsList <EmptyList />', () => {
   test('It should renders properly', () => {
     const tree = render(<EmptyList />)
     expect(tree).toMatchSnapshot()

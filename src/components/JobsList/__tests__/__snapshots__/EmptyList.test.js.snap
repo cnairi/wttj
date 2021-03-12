@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component Common <Language /> It should renders properly 1`] = `
+exports[`Component JobsList <EmptyList /> It should renders properly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": .c1 {
