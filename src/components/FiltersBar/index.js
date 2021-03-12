@@ -122,7 +122,7 @@ function FiltersBar({
   )
 }
 
-FiltersBar.propTypes = {
+FiltersBar.propTypes /* remove-proptypes */ = {
   clearContractTypeFilter: func,
   clearDateFilter: func,
   clearGroupedBy: func,
