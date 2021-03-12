@@ -51,6 +51,7 @@ Here is what we are planning for our new release :
 - Improve testing by implementing Cypress and complete tests for react testing library. Objective: 100% quality coverage!
 - Save search option for user : either by adding params to our url, or with redux-persist.
 - Fuzzy match using fuse.js (https://fusejs.io/) or other react fuse-based packaged. We are currently improving the reliability of the proposed matches.
+- Analytics is not implemented on this project, but having good KPI's is key to improve our app. We are planning to add Google Tag Manager (fav one) or Instana to track errors and events.
 
 # Users feedbacks
 
