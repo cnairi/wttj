@@ -10,9 +10,6 @@ import Modale from '@components/Common/Modale/'
 import configureStore from '@store/configureStore'
 import theme from '@context/theme'
 
-// eslint-disable-next-line no-unused-vars
-import _ from './config.js'
-
 function App() {
   const { t } = useTranslation()
   return (
