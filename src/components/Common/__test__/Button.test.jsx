@@ -1,8 +1,7 @@
 import React from 'react'
 import { fireEvent } from '@testing-library/react'
-
-import Button from '../Button'
-import { render } from '../../../utils/tests'
+import Button from '@components/Common/Button'
+import { render } from '@utils/tests'
 
 const text = 'See more'
 const link = {

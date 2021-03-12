@@ -1,0 +1,350 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Common <Language /> It should renders properly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": .c7 {
+  width: 0.625rem;
+  height: 0.625rem;
+  color: #585851;
+}
+
+.c7 g,
+.c7 path {
+  stroke: none;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+}
+
+.c3 {
+  position: relative;
+  color: #000000;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight: 400;
+  background-color: #FFFFFF;
+  border-color: #E8E8E6;
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  width: 100%;
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 2.5rem;
+  padding: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 2.5rem;
+  cursor: default;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  line-height: 1em;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 3px rgba(59,53,220,0.5);
+  border-color: #3B35DC;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 3px rgba(59,53,220,0.5);
+  border-color: #3B35DC;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 3px rgba(59,53,220,0.5);
+  border-color: #3B35DC;
+}
+
+.c3:focus {
+  box-shadow: 0 0 0 3px rgba(59,53,220,0.5);
+  border-color: #3B35DC;
+}
+
+.c3[disabled] {
+  background-color: #C3C3BE;
+  color: #818177;
+  cursor: not-allowed;
+}
+
+.c3:invalid,
+.c3:-moz-submit-invalid,
+.c3:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+.c3 br {
+  display: none;
+}
+
+.c3::before {
+  content: attr(data-spacer);
+  visibility: hidden;
+  display: block;
+  height: 0;
+}
+
+.c3:empty::after {
+  content: attr(placeholder);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: inherit;
+  opacity: 0.5;
+}
+
+.c3:empty::before {
+  height: auto;
+}
+
+.c4 {
+  position: absolute;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c5 {
+  position: relative;
+  height: 100%;
+  width: 2.5rem;
+  padding: 0;
+  outline: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 .c6 {
+  -webkit-transform: rotate3d(0);
+  -ms-transform: rotate3d(0);
+  transform: rotate3d(0);
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
+}
+
+.c5:not(:last-child) {
+  width: auto;
+}
+
+.c0 .sc-LzLtR {
+  margin-bottom: 0;
+}
+
+.c0 .sc-LzLtO {
+  margin-bottom: 0.625rem;
+}
+
+<body>
+    <div>
+      <form>
+        <div
+          class="c0"
+          data="[object Object]"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-labelledby="language-label"
+            class="c1"
+            data="[object Object]"
+            role="combobox"
+          >
+            <div
+              class="c2"
+            >
+              <div
+                aria-autocomplete="list"
+                aria-labelledby="language-label"
+                autocomplete="off"
+                class="c3"
+                data="[object Object]"
+                data-spacer="common.languages.en"
+                id="language"
+                name="language"
+                placeholder="Choose from…"
+                tabindex="0"
+                value=""
+              />
+              <div
+                class="c4"
+              >
+                <button
+                  aria-haspopup="true"
+                  aria-label="open menu"
+                  class="c5"
+                  data-toggle="true"
+                  role="button"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    alt="Down"
+                    class="c6 c7"
+                    color="nude.800"
+                    role="img"
+                    viewBox="0 0 100 100"
+                  >
+                    <path
+                      d="M50 80.5a6.52 6.52 0 0 1-4.32-1.63L2.2 40.63a6.43 6.43 0 0 1-.55-9.12 6.55 6.55 0 0 1 9.2-.55l38.64 33.98 39.16-43.3a6.55 6.55 0 0 1 9.2-.49 6.43 6.43 0 0 1 .5 9.13l-43.5 48.07A6.53 6.53 0 0 1 50 80.5"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form>
+      <div
+        class="sc-LzLtU hlzMfg"
+        data="[object Object]"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-labelledby="language-label"
+          class="sc-LzLth eNEwko"
+          data="[object Object]"
+          role="combobox"
+        >
+          <div
+            class="sc-LzLti kYVQYQ"
+          >
+            <div
+              aria-autocomplete="list"
+              aria-labelledby="language-label"
+              autocomplete="off"
+              class="sc-LzLtj iTcxMN"
+              data="[object Object]"
+              data-spacer="common.languages.en"
+              id="language"
+              name="language"
+              placeholder="Choose from…"
+              tabindex="0"
+              value=""
+            />
+            <div
+              class="sc-LzLtn iBHjiM"
+            >
+              <button
+                aria-haspopup="true"
+                aria-label="open menu"
+                class="sc-LzLtL bwgrEm"
+                data-toggle="true"
+                role="button"
+                tabindex="-1"
+                type="button"
+              >
+                <svg
+                  alt="Down"
+                  class="sc-LzLsE iPAPVE"
+                  color="nude.800"
+                  role="img"
+                  viewBox="0 0 100 100"
+                >
+                  <path
+                    d="M50 80.5a6.52 6.52 0 0 1-4.32-1.63L2.2 40.63a6.43 6.43 0 0 1-.55-9.12 6.55 6.55 0 0 1 9.2-.55l38.64 33.98 39.16-43.3a6.55 6.55 0 0 1 9.2-.49 6.43 6.43 0 0 1 .5 9.13l-43.5 48.07A6.53 6.53 0 0 1 50 80.5"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

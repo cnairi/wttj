@@ -2,12 +2,12 @@
 import React, { useState } from 'react'
 import { Select } from '@welcome-ui/select'
 import { Form as FinalForm } from 'react-final-form'
-import { withTranslation } from 'react-i18next'
-import { func, object } from 'prop-types'
+import { useTranslation } from 'react-i18next'
 import { ConnectedField } from '@welcome-ui/connected-field'
 import { LOCALES } from '@constants/locales'
 
-function Lang({ i18n, t }) {
+function Language() {
+  const { i18n, t } = useTranslation()
   const [lang, setLang] = useState(i18n.language)
 
   const options = [
@@ -57,9 +57,4 @@ function Lang({ i18n, t }) {
   )
 }
 
-Lang.propTypes /* remove-proptypes */ = {
-  i18n: object,
-  t: func,
-}
-
-export default withTranslation()(Lang)
+export default Language
