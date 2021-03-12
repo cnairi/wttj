@@ -1,10 +1,11 @@
 import React from 'react'
 
 const highlightContent = (content, filtersKeyword) => {
-  const matchRegexp = new RegExp(filtersKeyword.replace(/[-[/\]{}()*+?.,\\^$|#\s]/g, '\\$&'), 'gi')
+  const trimmedKeyword = filtersKeyword.trim()
+  const matchRegexp = new RegExp(trimmedKeyword.replace(/[-[/\]{}()*+?.,\\^$|#\s]/g, '\\$&'), 'gi')
 
   const match = content.match(matchRegexp)
-  if (!filtersKeyword) return content
+  if (!trimmedKeyword) return content
 
   const highlightedContent = content.split(matchRegexp).reduce((accumulator, currentValue, i) => {
     if (!i) return [currentValue]

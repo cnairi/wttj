@@ -19,9 +19,9 @@ export const selectFiltersActivated = createSelector(
 export const selectGroupedByActivated = createSelector(getGroupedByActivated, group => group)
 
 const keywordsIncludedInJobDetails = (job, keywords) =>
-  job.name.toLowerCase().includes(keywords.toLowerCase()) ||
-  job.description.toLowerCase().includes(keywords.toLowerCase()) ||
-  job.profile.toLowerCase().includes(keywords.toLowerCase())
+  job.name.toLowerCase().includes(keywords.toLowerCase().trim()) ||
+  job.description.toLowerCase().includes(keywords.toLowerCase().trim()) ||
+  job.profile.toLowerCase().includes(keywords.toLowerCase().trim())
 
 export const selectJobsFiltered = createSelector(
   getFiltersContract,
