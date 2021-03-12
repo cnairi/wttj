@@ -7,7 +7,7 @@ import {
   selectJobsFiltered,
   selectJobsListOrdered,
 } from '@store/selectors/filters'
-import JobsList from '@components/JobsList/JobsList'
+import JobsListContainer from '@components/JobsList/Container'
 
 const mapStateToProps = state => {
   const { filters, jobs } = state
@@ -28,4 +28,4 @@ const mapDispatchToProps = dispatch => ({
   openModale: (id, type) => dispatch(openModale(id, type)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(JobsList)
+export default connect(mapStateToProps, mapDispatchToProps)(JobsListContainer)

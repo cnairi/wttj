@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react'
 import { array, bool, func, string } from 'prop-types'
-import { Stack } from '@welcome-ui/stack'
-import JobsListItem from '@components/JobsList/JobsListItem'
-import JobsListOrdered from '@components/JobsList/JobsListOrdered'
-import EmptyList from '@components/JobsList/EmptyList'
+import JobsListContent from '@components/JobsList/Content'
+import JobsListContentOrdered from '@components/JobsList/Content/Ordered'
+import JobsListContentEmpty from '@components/JobsList/Content/Empty'
 
-function JobsList({
+function JobsListContainer({
   fetchJobs,
   filtersActivated,
   filtersKeyword,
@@ -24,12 +23,12 @@ function JobsList({
   }, [fetchJobs])
 
   if (filtersActivated && !jobsListFiltered.length) {
-    return <EmptyList />
+    return <JobsListContentEmpty />
   }
 
   if (jobsListOrdered.length) {
     return (
-      <JobsListOrdered
+      <JobsListContentOrdered
         filtersKeyword={filtersKeyword}
         groupedBy={groupedBy}
         jobsDepartments={jobsDepartments}
@@ -41,25 +40,17 @@ function JobsList({
   }
 
   return jobsListToDisplay?.length ? (
-    <Stack as="ul" marginTop="4xl" spacing="4xl">
-      {jobsListToDisplay.map(jobOffer => (
-        <JobsListItem
-          contractType={jobOffer.contract_type.en}
-          filtersKeyword={filtersKeyword}
-          jobId={jobOffer.id}
-          key={jobOffer.id}
-          name={jobOffer.name}
-          officeName={jobOffer.office.name}
-          onClickItem={openModale}
-        />
-      ))}
-    </Stack>
+    <JobsListContent
+      filtersKeyword={filtersKeyword}
+      jobsList={jobsListToDisplay}
+      openModale={openModale}
+    />
   ) : (
     <div />
   )
 }
 
-JobsList.propTypes /* remove-proptypes */ = {
+JobsListContainer.propTypes /* remove-proptypes */ = {
   fetchJobs: func,
   filtersActivated: bool,
   filtersKeyword: string,
@@ -72,4 +63,4 @@ JobsList.propTypes /* remove-proptypes */ = {
   openModale: func,
 }
 
-export default JobsList
+export default JobsListContainer

@@ -1,5 +1,5 @@
 import React from 'react'
-import EmptyList from '@components/JobsList/EmptyList'
+import EmptyList from '@components/JobsList/Content/Empty'
 import { render } from '@utils/tests'
 
 jest.mock('react-i18next', () => ({
