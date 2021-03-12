@@ -20,6 +20,10 @@ We have decided to use wttj config front for our project. For more info go to ht
 
 We have implemented i18n on our project. For now, only EN and FR versions are available.
 
+# Commit & Push
+
+Husky is implemented to automatize pre-commit hooks checks. Troubleshooting on install : git config --unset core.hookspath (https://github.com/typicode/husky/issues/435#issuecomment-450192796)
+
 # Deployment and build
 
 https://wttj-camille-nairi.herokuapp.com/ We used Heroku to deploy our app. Our app is connected to Github and to our wttj repo. Automatic deploys from main are enabled.
