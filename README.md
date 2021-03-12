@@ -46,7 +46,7 @@ Here is what we are planning for our new release :
 
 - As the initial demand was creating a React.js app, we have decided not to use Next.js. Still, we truly believe that Next will offer a better experience with hybrid server and static rendering, for performance and SEO purposes as well as for routing simplicity.
 - a11y is not perfect yet. We're optimizing it for our next release.
-- ES, CS and SK locales will be implemented, as is the case on the WTTJ website.
+- ES, CS and SK locales will be implemented, as is the case on the WTTJ website. Also, we don't have the api route for fetching jobs in other languages. We will implement conditionnal api call for fetching jobs according to browser or selected locale.
 - A Storybook documents this project, but we will complete it with all components for the V2.
 - Improve testing by implementing Cypress and complete tests for react testing library. Objective: 100% quality coverage!
 - Save search option for user : either by adding params to our url, or with redux-persist.
